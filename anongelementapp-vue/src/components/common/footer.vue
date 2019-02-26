@@ -24,12 +24,12 @@ export default {
         {
           name: "分类",
           icon: "&#xe60e;",
-          path: "/classification"
+          path: "/classific"
         },
         {
           name: "购物车",
           icon: "&#xe66e;",
-          path: "/buyCar"
+          path: "/cart"
         },
         {
           name: "个人中心",
