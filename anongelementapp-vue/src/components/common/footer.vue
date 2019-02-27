@@ -42,7 +42,7 @@ export default {
 };
 </script>
 
-<style lang="">
+<style lang="scss">
 .footer {
   width: 100%;
   height: 0.98rem;

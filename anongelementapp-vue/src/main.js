@@ -9,7 +9,14 @@ import "./common/js/flexble";
 
 import store from "./store";
 
+//引入mint-ui插件
+import Mint from "mint-ui"
 
+import {Cell,Checklist} from "mint-ui"
+Vue.component(Cell.name,Cell)
+Vue.component(Checklist.name,Checklist)
+
+Vue.use(Mint);
 // Vue.prototype.$axios = axios
 Vue.config.productionTip = false
 //当post请求数据的时候如果后端无法接收到响应的数据 我们可以对其进行转换
