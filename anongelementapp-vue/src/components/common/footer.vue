@@ -36,7 +36,7 @@ export default {
           icon: "&#xe606;",
           path: "/personal"
         }
-      ]
+      ],
     };
   }
 };

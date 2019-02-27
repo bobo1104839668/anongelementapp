@@ -7,11 +7,13 @@
 
 <script>
 import Footer from "./components/common/footer.vue"
+import Vuex from "vuex"
 export default {
   components: {
     "Footer" : Footer
-  }
+  },
 }
+
 </script>
 
 <style lang="scss">

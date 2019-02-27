@@ -14,7 +14,7 @@ export default {
         ...Vuex.mapActions({
             handleList:"home/handleList"
         })
-    }
+    },
 }
 </script>
 
