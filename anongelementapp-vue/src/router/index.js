@@ -27,7 +27,7 @@ const router = new Router({
       }
     },
     {
-      path:"/classific/classific",
+      path:"/classific",
       component:Classific,
       name:"classific",
       meta:{
