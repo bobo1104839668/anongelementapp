@@ -49,7 +49,7 @@ const router = new Router({
       component:Personal,
       name:"personal",
       meta:{
-        flag:false,
+        flag:true,
         title:"个人中心"
       }
     },
@@ -58,7 +58,7 @@ const router = new Router({
       component:Login,
       name:"login",
       meta:{
-        flag:false,
+        flag:true,
         title:"登录"
       }
     },
@@ -67,7 +67,7 @@ const router = new Router({
       component:Registor,
       name:"registor",
       meta:{
-        flag:false,
+        flag:true,
         title:"注册"
       }
     }

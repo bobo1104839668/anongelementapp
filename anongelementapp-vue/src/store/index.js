@@ -9,7 +9,7 @@ import classific from "./classific"
 Vue.use(Vuex);
 
 let state = {
-    flag:true
+
 }
 
 let mutations = {
