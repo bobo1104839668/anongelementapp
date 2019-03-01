@@ -10,6 +10,17 @@ Vue.use(Vuex);
 
 let state = {
 
+<<<<<<< HEAD
+=======
+    flag:true
+=======
+<<<<<<< HEAD
+
+=======
+    flag:true
+>>>>>>> master
+>>>>>>> 42904599a063ca6eeb1631cc6ca9c36914a6f317
+>>>>>>> shaobo
 }
 
 let mutations = {

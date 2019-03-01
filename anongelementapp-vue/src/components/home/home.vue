@@ -23,6 +23,7 @@ import Recommend from "./components/recommend"
 import BScroll from "better-scroll"
 
 export default {
+<<<<<<< HEAD
 	components:{
 		"Carousel_com":Carousel,
 		"Header_com":Header,
@@ -59,4 +60,20 @@ export default {
 .content{
 	overflow: auto;
 }
+=======
+    created () {
+        this.handleList();
+    },
+    methods: {
+        ...Vuex.mapActions({
+            handleList:"home/handleList"
+        })
+    }
+}
+</script>
+
+
+<style lang="scss">
+    
+>>>>>>> shaobo
 </style>

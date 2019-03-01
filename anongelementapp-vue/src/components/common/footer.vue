@@ -36,13 +36,21 @@ export default {
           icon: "&#xe606;",
           path: "/personal"
         }
+<<<<<<< HEAD
       ]
+=======
+      ],
+>>>>>>> shaobo
     };
   }
 };
 </script>
 
+<<<<<<< HEAD
 <style lang="">
+=======
+<style lang="scss">
+>>>>>>> shaobo
 .footer {
   width: 100%;
   height: 0.98rem;
