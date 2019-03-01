@@ -10,10 +10,6 @@ export default {
 }
 </script>
 
-<<<<<<< HEAD
 <style lang="">
-=======
-<style lang="scss">
->>>>>>> master
     
 </style>

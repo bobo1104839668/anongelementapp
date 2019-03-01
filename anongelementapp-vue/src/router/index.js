@@ -9,14 +9,7 @@ import Cart from "../components/cart/cart.vue"
 import Personal from "../components/personal/personal.vue"
 import Login from "../components/common/login.vue"
 import Registor from "../components/common/registor.vue"
-<<<<<<< HEAD
-=======
-import LoginTwo from "@/components/common/loginTwo.vue"
-import LoginOne from "@/components/common/LoginOne.vue"
-import Target from "@/components/personal/components/target"
-import Refund from "@/components/personal/components/refund"
-import Address from "@/components/personal/components/address"
->>>>>>> master
+import Search from "../components/home/two_page/search.vue"
 
 const router = new Router({
   routes: [
@@ -35,36 +28,15 @@ const router = new Router({
       }
     },
     {
-<<<<<<< HEAD
-=======
-      path:"/target",
-      component:Target,
-      name:"target",
+      path:"/search",
+      component:Search,
+      name:"search",
       meta:{
         flag:true,
-        title:"订单"
+        title:"二级页面"
       }
     },
     {
-      path:"/address",
-      component:Address,
-      name:"address",
-      meta:{
-        flag:true,
-        title:"收货地址管理"
-      }
-    },
-    {
-      path:"/refund",
-      component:Refund,
-      name:"refund",
-      meta:{
-        flag:true,
-        title:"退款"
-      }
-    },
-    {
->>>>>>> master
       path:"/classific",
       component:Classific,
       name:"classific",
@@ -87,11 +59,7 @@ const router = new Router({
       component:Personal,
       name:"personal",
       meta:{
-<<<<<<< HEAD
         flag:true,
-=======
-        flag:false,
->>>>>>> master
         title:"个人中心"
       }
     },
@@ -100,31 +68,8 @@ const router = new Router({
       component:Login,
       name:"login",
       meta:{
-<<<<<<< HEAD
         flag:true,
         title:"登录"
-=======
-        flag:false,
-        title:"登录"
-      },
-    },
-    {
-      path:"/loginTwo",
-      component:LoginTwo,
-      name:"loginTwo",
-      meta:{
-        flag:false,
-        title:"手机号"
-      }
-    },
-    {
-      path:"/loginOne",
-      component:LoginOne,
-      name:"loginOne",
-      meta:{
-        flag:false,
-        title:"登录首页"
->>>>>>> master
       }
     },
     {
@@ -132,11 +77,7 @@ const router = new Router({
       component:Registor,
       name:"registor",
       meta:{
-<<<<<<< HEAD
         flag:true,
-=======
-        flag:false,
->>>>>>> master
         title:"注册"
       }
     }

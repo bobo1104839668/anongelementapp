@@ -36,21 +36,13 @@ export default {
           icon: "&#xe606;",
           path: "/personal"
         }
-<<<<<<< HEAD
       ]
-=======
-      ],
->>>>>>> master
     };
   }
 };
 </script>
 
-<<<<<<< HEAD
 <style lang="">
-=======
-<style lang="scss">
->>>>>>> master
 .footer {
   width: 100%;
   height: 0.98rem;
@@ -58,6 +50,7 @@ export default {
   left: 0;
   bottom: 0;
   background: #ffffff;
+  z-index: 111;
 }
 .footer > ul {
   width: 100%;
