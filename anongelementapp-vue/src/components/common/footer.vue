@@ -24,12 +24,12 @@ export default {
         {
           name: "分类",
           icon: "&#xe60e;",
-          path: "/classification"
+          path: "/classific"
         },
         {
           name: "购物车",
           icon: "&#xe66e;",
-          path: "/buyCar"
+          path: "/cart"
         },
         {
           name: "个人中心",
@@ -50,6 +50,7 @@ export default {
   left: 0;
   bottom: 0;
   background: #ffffff;
+  z-index: 111;
 }
 .footer > ul {
   width: 100%;
