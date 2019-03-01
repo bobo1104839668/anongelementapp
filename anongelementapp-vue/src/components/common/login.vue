@@ -1,6 +1,5 @@
 <template>
     <div class="login">
-        登录
        <mt-header title="手机登录" class="header">
             <router-link to="/home" slot="left" >
                 <mt-button icon="back" ></mt-button>
@@ -17,7 +16,6 @@
 </template>
 
 <script>
-
 import Vuex from "vuex"
 export default {
     computed: {

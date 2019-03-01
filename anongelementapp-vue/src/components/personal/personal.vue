@@ -1,6 +1,5 @@
 <template>
-    <div class="personal">
-        <div class="personal">
+  <div class="personal">
     <mt-header title="个人中心" class="header">
         <mt-button slot="right">
             <i class="iconfont">&#xe62f;</i>
@@ -73,7 +72,6 @@
         </div>
     </div>
   </div>
-    </div>
 </template>
 
 <script>

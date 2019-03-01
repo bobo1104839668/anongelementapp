@@ -1,5 +1,5 @@
 <template>
-    <div class="registor">
+  <div class="registor">
     <mt-header title="设置密码" class="header">
       <router-link to="/home" slot="left">
         <mt-button icon="back"></mt-button>
@@ -35,6 +35,9 @@ export default {
 }
 </script>
 
+
+export default {};
+</script>
 
 <style lang="scss">
 .registor {

@@ -9,11 +9,20 @@ import Cart from "../components/cart/cart.vue"
 import Personal from "../components/personal/personal.vue"
 import Login from "../components/common/login.vue"
 import Registor from "../components/common/registor.vue"
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 42904599a063ca6eeb1631cc6ca9c36914a6f317
 import LoginTwo from "@/components/common/loginTwo.vue"
 import LoginOne from "@/components/common/LoginOne.vue"
 import Target from "@/components/personal/components/target"
 import Refund from "@/components/personal/components/refund"
 import Address from "@/components/personal/components/address"
+<<<<<<< HEAD
+=======
+>>>>>>> master
+>>>>>>> 42904599a063ca6eeb1631cc6ca9c36914a6f317
 
 const router = new Router({
   routes: [
@@ -32,6 +41,11 @@ const router = new Router({
       }
     },
     {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 42904599a063ca6eeb1631cc6ca9c36914a6f317
       path:"/target",
       component:Target,
       name:"target",
@@ -59,6 +73,10 @@ const router = new Router({
       }
     },
     {
+<<<<<<< HEAD
+=======
+>>>>>>> master
+>>>>>>> 42904599a063ca6eeb1631cc6ca9c36914a6f317
       path:"/classific",
       component:Classific,
       name:"classific",
@@ -81,8 +99,16 @@ const router = new Router({
       component:Personal,
       name:"personal",
       meta:{
+<<<<<<< HEAD
         flag:true,
         flag:false,
+=======
+<<<<<<< HEAD
+        flag:true,
+=======
+        flag:false,
+>>>>>>> master
+>>>>>>> 42904599a063ca6eeb1631cc6ca9c36914a6f317
         title:"个人中心"
       }
     },
@@ -91,8 +117,17 @@ const router = new Router({
       component:Login,
       name:"login",
       meta:{
+<<<<<<< HEAD
         flag:true,
         title:"登录"
+=======
+<<<<<<< HEAD
+        flag:true,
+        title:"登录"
+=======
+        flag:false,
+        title:"登录"
+>>>>>>> 42904599a063ca6eeb1631cc6ca9c36914a6f317
       },
     },
     {
@@ -111,6 +146,10 @@ const router = new Router({
       meta:{
         flag:false,
         title:"登录首页"
+<<<<<<< HEAD
+=======
+>>>>>>> master
+>>>>>>> 42904599a063ca6eeb1631cc6ca9c36914a6f317
       }
     },
     {
@@ -118,8 +157,16 @@ const router = new Router({
       component:Registor,
       name:"registor",
       meta:{
+<<<<<<< HEAD
         flag:true,
         flag:false,
+=======
+<<<<<<< HEAD
+        flag:true,
+=======
+        flag:false,
+>>>>>>> master
+>>>>>>> 42904599a063ca6eeb1631cc6ca9c36914a6f317
         title:"注册"
       }
     }

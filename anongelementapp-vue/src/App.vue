@@ -10,11 +10,10 @@ import Footer from "./components/common/footer.vue"
 export default {
   components: {
     "Footer" : Footer
-  }
+  },
 }
 
 </script>
-
 <style lang="scss">
 #app{
   width: 100%;
