@@ -9,30 +9,16 @@
       <span>添加收货地址</span>
     </div>
     <div class="list">
-
+      
     </div>
   </div>
 </template>
 
 <script>
-import Vuex from "vuex";
 export default {
-  data() {
-    return {};
-  },
   created () {
     this.handleProvices();  
   },
-  computed: {
-      ...Vuex.mapState({
-          // provices:state=>state.provices
-      })
-  },
-  methods: {
-      ...Vuex.mapActions({
-          // handleProvices:"/personal/handleProvices"
-      })
-  }
 };
 </script>
 
