@@ -9,7 +9,8 @@ import Cart from "../components/cart/cart.vue"
 import Personal from "../components/personal/personal.vue"
 import Login from "../components/common/login.vue"
 import Registor from "../components/common/registor.vue"
-
+import Details from "../components/details/details.vue"
+import ProductList from "../components/productList/productList.vue"
 const router = new Router({
   routes: [
     {
@@ -27,13 +28,31 @@ const router = new Router({
       }
     },
     {
-      path:"/classific/classific",
+      path:"/classific",
       component:Classific,
       name:"classific",
       meta:{
         flag:true,
         title:"分类"
       }
+    },
+     {
+      path:"/details",
+      component:Details,
+      name:"details",
+//    meta:{
+//      flag:true,
+//      title:"详情"
+//    }
+    },
+     {
+      path:"/productList",
+      component:ProductList,
+      name:"productList",
+//    meta:{
+//      flag:true,
+//      title:"产品详情"
+//    }
     },
     {
       path:"/cart",

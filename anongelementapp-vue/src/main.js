@@ -8,6 +8,8 @@ import "./common/css/reset.css"
 import "./common/js/flexble"
 
 import store from "./store"
+import MintUI from 'mint-ui'
+import 'mint-ui/lib/style.css'
 
 // import axios from "axios"
 

@@ -5,6 +5,8 @@ import cart from "./cart"
 import home from "./home"
 import personal from "./personal"
 import classific from "./classific"
+import details from "./details"
+import productList from "./productList"
 
 Vue.use(Vuex);
 
@@ -33,7 +35,9 @@ const store = new Vuex.Store({
         cart,
         home,
         classific,
-        personal
+        personal,
+        details,
+        productList
     }
 })
 
