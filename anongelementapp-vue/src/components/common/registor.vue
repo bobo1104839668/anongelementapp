@@ -11,14 +11,14 @@
         <input type="tel" placeholder="填写验证码">
       </label>
       <label class="input-text item">
-        <input type="tel" placeholder="用户昵称">
+        <input type="text"  placeholder="用户昵称" @input="handleInput({id:3,e:$event})">
       </label>
       <label class="input-text item">
-        <input type="tel" placeholder="设置密码(6-20位字符)">
-        <mt-switch v-model="value"></mt-switch>
+        <input type="password" placeholder="设置密码(6-20位字符)" @input="handleInput({id:1,e:$event})">
+        <mt-switch></mt-switch>
       </label>
       <router-link :to="{path:'/personal'}">
-        <button class="btns">注册</button>
+        <button class="btns" @click="handleRegistor()">注册</button>
       </router-link>
     </div>
     <mt-header title="设置密码" class="header">
@@ -30,8 +30,45 @@
 </template>
 
 <script>
+import Vuex from "vuex"
+import {setCookie} from "../../utils/auth"
 export default {
-    
+    data () {
+      return {
+        phone:this.phone  
+      }
+    },
+    created () {
+      let {phone} = this.$route.query;
+    },
+    computed: {
+      username:state=>state.personal.username,
+      password:state=>state.personal.password
+    },
+    methods: {
+      ...Vuex.mapActions({
+        handleInput: "personal/handleInput",
+        handleRegistor:"personal/handleRegistor"
+      }),
+      handleRegistor(){
+        axios({
+            method:"post",
+            url:"http://localhost:3000/users",
+            data:{
+                username:username,
+                phone:phone,
+                password:password,
+            }
+        }).then((data)=>{
+            setCookie(username)
+            if(data){
+              this.$router.push({
+                name:'personal'
+              })
+            }
+        })
+      }
+    },
 }
 </script>
 

@@ -20,14 +20,6 @@
 <script>
 import Vuex from "vuex"
 export default {
-    data () {
-        return {
-            
-        }
-    },
-    created :function() {
-        
-    }
 };
 </script>
 
