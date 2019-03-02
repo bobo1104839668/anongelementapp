@@ -13,6 +13,7 @@ Vue.use(MintUI)
 // import axios from "axios"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // axios.defaults.withCredentials = true
 =======
 <<<<<<< HEAD
@@ -22,6 +23,8 @@ Vue.use(MintUI)
 
 =======
 >>>>>>> 42904599a063ca6eeb1631cc6ca9c36914a6f317
+=======
+>>>>>>> shaobo
 //引入mint-ui插件
 import Mint from "mint-ui"
 
@@ -31,9 +34,12 @@ Vue.component(Checklist.name,Checklist)
 
 Vue.use(Mint);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> master
 >>>>>>> 42904599a063ca6eeb1631cc6ca9c36914a6f317
+>>>>>>> shaobo
+=======
 >>>>>>> shaobo
 // Vue.prototype.$axios = axios
 Vue.config.productionTip = false

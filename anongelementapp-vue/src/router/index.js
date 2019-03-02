@@ -2,13 +2,14 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 Vue.use(Router)
-
+import store from "../store"
 import Home from "../components/home/home.vue"
 import Classific from "../components/classific/classific.vue"
 import Cart from "../components/cart/cart.vue"
 import Personal from "../components/personal/personal.vue"
 import Login from "../components/common/login.vue"
 import Registor from "../components/common/registor.vue"
+<<<<<<< HEAD
 <<<<<<< HEAD
 import Search from "../components/home/two_page/search.vue"
 =======
@@ -17,15 +18,20 @@ import Search from "../components/home/two_page/search.vue"
 <<<<<<< HEAD
 =======
 >>>>>>> 42904599a063ca6eeb1631cc6ca9c36914a6f317
+=======
+>>>>>>> shaobo
 import LoginTwo from "@/components/common/loginTwo.vue"
 import LoginOne from "@/components/common/LoginOne.vue"
 import Target from "@/components/personal/components/target"
 import Refund from "@/components/personal/components/refund"
 import Address from "@/components/personal/components/address"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> master
 >>>>>>> 42904599a063ca6eeb1631cc6ca9c36914a6f317
+>>>>>>> shaobo
+=======
 >>>>>>> shaobo
 
 const router = new Router({
@@ -46,6 +52,7 @@ const router = new Router({
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       path:"/search",
       component:Search,
       name:"search",
@@ -55,6 +62,8 @@ const router = new Router({
 <<<<<<< HEAD
 =======
 >>>>>>> 42904599a063ca6eeb1631cc6ca9c36914a6f317
+=======
+>>>>>>> shaobo
       path:"/target",
       component:Target,
       name:"target",
@@ -86,9 +95,12 @@ const router = new Router({
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> master
 >>>>>>> 42904599a063ca6eeb1631cc6ca9c36914a6f317
+>>>>>>> shaobo
+=======
 >>>>>>> shaobo
       path:"/classific",
       component:Classific,
@@ -112,6 +124,7 @@ const router = new Router({
       component:Personal,
       name:"personal",
       meta:{
+<<<<<<< HEAD
         flag:true,
 <<<<<<< HEAD
 =======
@@ -124,6 +137,9 @@ const router = new Router({
 >>>>>>> master
 >>>>>>> 42904599a063ca6eeb1631cc6ca9c36914a6f317
 >>>>>>> shaobo
+=======
+        flag:true,
+>>>>>>> shaobo
         title:"个人中心"
       }
     },
@@ -135,6 +151,7 @@ const router = new Router({
         flag:true,
         title:"登录"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 <<<<<<< HEAD
@@ -144,6 +161,8 @@ const router = new Router({
         flag:false,
         title:"登录"
 >>>>>>> 42904599a063ca6eeb1631cc6ca9c36914a6f317
+=======
+>>>>>>> shaobo
       },
     },
     {
@@ -163,9 +182,12 @@ const router = new Router({
         flag:false,
         title:"登录首页"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> master
 >>>>>>> 42904599a063ca6eeb1631cc6ca9c36914a6f317
+>>>>>>> shaobo
+=======
 >>>>>>> shaobo
       }
     },
@@ -174,6 +196,7 @@ const router = new Router({
       component:Registor,
       name:"registor",
       meta:{
+<<<<<<< HEAD
         flag:true,
 <<<<<<< HEAD
 =======
@@ -186,9 +209,23 @@ const router = new Router({
 >>>>>>> master
 >>>>>>> 42904599a063ca6eeb1631cc6ca9c36914a6f317
 >>>>>>> shaobo
+=======
+        flag:true,
+>>>>>>> shaobo
         title:"注册"
       }
     }
   ]
+})
+router.beforeEach((to,from,next)=>{
+  if(to.meta.flag){
+    if(store.state.personal.token){
+      next();
+    }else{
+      next("/login");
+    }
+  }else{
+    next();
+  }
 })
 export default router;

@@ -7,11 +7,16 @@
           <span>{{item.name}}</span>
         </router-link>
       </li>
+       <li @click="handleToken">
+          <i class="iconfont" >&#xe606;</i>
+          <span>个人中心</span>
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
+import Vuex from "vuex"
 export default {
   data() {
     return {
@@ -30,18 +35,26 @@ export default {
           name: "购物车",
           icon: "&#xe66e;",
           path: "/cart"
-        },
-        {
-          name: "个人中心",
-          icon: "&#xe606;",
-          path: "/personal"
         }
+<<<<<<< HEAD
 <<<<<<< HEAD
       ]
 =======
       ],
 >>>>>>> shaobo
     };
+=======
+      ]
+    }
+  },
+  methods: {
+    ...Vuex.mapActions({
+      handleTokens:"handleToken"
+    }),
+    handleToken(){
+      this.handleTokens(this.$router);
+    }
+>>>>>>> shaobo
   }
 };
 </script>
