@@ -35,17 +35,14 @@ export default {
           name: "购物车",
           icon: "&#xe66e;",
           path: "/cart"
+        },
+        {
+          name: "个人中心",
+          icon: "&#xe606;",
+          path: "/personal"
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
       ]
-=======
-      ],
->>>>>>> shaobo
     };
-=======
-      ]
-    }
   },
   methods: {
     ...Vuex.mapActions({
@@ -54,16 +51,11 @@ export default {
     handleToken(){
       this.handleTokens(this.$router);
     }
->>>>>>> shaobo
   }
 };
 </script>
 
-<<<<<<< HEAD
-<style lang="">
-=======
 <style lang="scss">
->>>>>>> shaobo
 .footer {
   width: 100%;
   height: 0.98rem;
@@ -80,13 +72,13 @@ export default {
   justify-content: space-around;
   align-items: center;
 }
-.footer > ul > li > a {
+.footer > ul > li,.footer > ul > li > a {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.footer > ul > li > a > i {
+.footer > ul > li>i,.footer > ul > li > a > i {
   font-size: 40px;
 }
 </style>

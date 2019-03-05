@@ -1,9 +1,5 @@
 <template>
-<<<<<<< HEAD
     <div class="login">
-<<<<<<< HEAD
-        登录
-=======
        <mt-header title="手机登录" class="header">
             <router-link to="/home" slot="left" >
                 <mt-button icon="back" ></mt-button>
@@ -16,8 +12,6 @@
             </label>
             <button class="btns" @click="handleTo()">下一步</button>
         </div>
->>>>>>> shaobo
-=======
   <div class="login">
     <mt-header title="手机登录" class="header">
       <router-link to="/home" slot="left">
@@ -30,27 +24,17 @@
         <input type="tel" :value="phone" @input="handleInput({id:2,e:$event})" placeholder="手机号">
       </label>
       <button class="btns" @click="handleTo()">下一步</button>
->>>>>>> shaobo
     </div>
   </div>
 </template>
 
 <script>
-<<<<<<< HEAD
-<<<<<<< HEAD
-export default {
-    
-}
-</script>
 
-<style>
-
-=======
 import Vuex from "vuex"
-=======
 import Vuex from "vuex";
 import axios from "axios";
->>>>>>> shaobo
+import Vuex from "vuex";
+import axios from "axios";
 export default {
   computed: {
     ...Vuex.mapState({
@@ -143,5 +127,4 @@ export default {
     outline: none;
   }
 }
->>>>>>> shaobo
 </style>

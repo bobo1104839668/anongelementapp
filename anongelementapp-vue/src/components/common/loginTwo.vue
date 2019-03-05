@@ -18,6 +18,10 @@
       </label>
       <button class="btn">忘记密码</button>
         <button class="btns" @click="handleClick(this.$router)">登录</button>
+        <input type="password" placeholder="输入密码" :value="password" @input="handleInput({id:1,e:$event})">
+      </label>
+      <button class="btn">忘记密码</button>
+        <button class="btns" @click="handleClicks()">登录</button>
     </div>
   </div>
 </template>
@@ -71,14 +75,19 @@ export default {
   computed: {
       ...Vuex.mapState({
           password:state=>state.password,
-          phone:state=>state.phone
+          phone:state=>state.phone,
+          password:state=>state.personal.password,
+          phone:state=>state.personal.phone,
       })
   },
   methods: {
       ...Vuex.mapActions({
           handleInput:"personal/handleInput",
-          handleClick:"personal/handleClick"
+          handleClick:"personal/handleClickLogin"
       }),
+      handleClicks(){
+        this.handleClick(this.$router);
+      }
   },
 };
 </script>

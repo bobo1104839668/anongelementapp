@@ -22,4 +22,7 @@ export default {
        commit("handleSearch",data)
     },
 
+    async handleList(){
+       let data = await HomeData();
+    }
 }

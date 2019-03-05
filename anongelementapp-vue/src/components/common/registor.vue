@@ -1,9 +1,4 @@
 <template>
-<<<<<<< HEAD
-    <div class="registor">
-        注册
-    </div>
-=======
   <div class="registor">
     <mt-header title="设置密码" class="header">
       <router-link to="/home" slot="left">
@@ -22,8 +17,16 @@
         <input type="password" placeholder="设置密码(6-20位字符)" @input="handleInput({id:1,e:$event})">
         <mt-switch></mt-switch>
       </label>
-      <router-link :to="{path:'/personal'}">
+       <label class="input-text item">
         <button class="btns" @click="handleRegistor()">注册</button>
+        <input type="text" :value="username" placeholder="用户昵称" @input="handleInput({id:3,e:$event})">
+      </label>
+      <label class="input-text item">
+        <input type="password" :value="password" placeholder="设置密码(6-20位字符)" @input="handleInput({id:1,e:$event})">
+        <mt-switch></mt-switch>
+      </label>
+      <router-link :to="{path:'/personal'}">
+        <button class="btns" @click="handleRegistors()">注册</button>
       </router-link>
     </div>
     <mt-header title="设置密码" class="header">
@@ -32,24 +35,19 @@
       </router-link>
     </mt-header>
   </div>
->>>>>>> shaobo
 </template>
 
 <script>
 import Vuex from "vuex"
 import {setCookie} from "../../utils/auth"
+import axios from "axios"
 export default {
-    data () {
-      return {
-        phone:this.phone  
-      }
-    },
-    created () {
-      let {phone} = this.$route.query;
-    },
     computed: {
-      username:state=>state.personal.username,
-      password:state=>state.personal.password
+     ...Vuex.mapState({
+        username:state=>state.personal.username,
+        password:state=>state.personal.password,
+        phone:state=>state.personal.phone
+     })
     },
     methods: {
       ...Vuex.mapActions({
@@ -73,18 +71,31 @@ export default {
               })
             }
         })
+      },
+      handleRegistors(){
+        this.handleRegistor(this.$router);
       }
+      // handleRegistor(){
+      //   axios({
+      //       method:"post",
+      //       url:"http://localhost:3000/users",
+      //       data:{
+      //           phone:this.phone,
+      //       }
+      //   }).then((data)=>{
+      //       setCookie(username)
+      //       if(data){
+      //         this.$router.push({
+      //           name:'personal'
+      //         })
+      //       }
+      //   })
+      // }
     },
 }
 </script>
 
-<<<<<<< HEAD
-<style>
 
-=======
-
-export default {};
-</script>
 
 <style lang="scss">
 .registor {
@@ -146,5 +157,4 @@ export default {};
     outline: none;
   }
 }
->>>>>>> shaobo
 </style>
