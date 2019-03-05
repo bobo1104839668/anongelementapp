@@ -1,6 +1,6 @@
 import Cookie from "js-cookie"
 
-export const setCookie = (key='X-Token',val)=>{
+export const setCookie = (val,key='X-Token')=>{
     Cookie.set(key,val);
 }
 export const getCookie = (key="X-Token")=>{

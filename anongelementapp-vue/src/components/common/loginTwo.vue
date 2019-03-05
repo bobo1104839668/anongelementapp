@@ -14,10 +14,10 @@
         <span>{{phone}}</span>
       </p>
       <label class="input-text item">
-        <input type="password" placeholder="输入密码" :value="password" @input="handleInputP({id:1,e:$event})">
+        <input type="password" placeholder="输入密码" :value="password" @input="handleInput({id:1,e:$event})">
       </label>
       <button class="btn">忘记密码</button>
-        <button class="btns" @click="handleClick(this.$router)">登录</button>
+        <button class="btns" @click="handleClicks()">登录</button>
     </div>
   </div>
 </template>
@@ -56,7 +56,6 @@ const request = ({ url, data }) => {
 import Vuex from "vuex"
 export default {
   created() {
-    let { phone } = this.$route.query;
     // 使用方式
     // request({
     //   url: "http://www.51talk.com/passport/getMobileCode",
@@ -70,15 +69,18 @@ export default {
   },
   computed: {
       ...Vuex.mapState({
-          password:state=>state.password,
-          phone:state=>state.phone
+          password:state=>state.personal.password,
+          phone:state=>state.personal.phone,
       })
   },
   methods: {
       ...Vuex.mapActions({
           handleInput:"personal/handleInput",
-          handleClick:"personal/handleClick"
+          handleClick:"personal/handleClickLogin"
       }),
+      handleClicks(){
+        this.handleClick(this.$router);
+      }
   },
 };
 </script>

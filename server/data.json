@@ -1,5 +1,46 @@
 {
-    "users":[
-        
-    ]
+  "users": [
+    {
+      "username": "zhangshaobo",
+      "password": "123",
+      "phone": "18510416568",
+      "id": 1
+    },
+    {
+      "username": "yingying",
+      "password": "123",
+      "phone": "18635933211",
+      "id": 2
+    },
+    {
+      "username": "aaaaa",
+      "password": "123",
+      "phone": "12345678912",
+      "id": 3
+    },
+    {
+      "username": "aaaaaaaa",
+      "password": "111",
+      "phone": "1111111111",
+      "id": 4
+    }
+  ],
+  "address": [
+    {
+      "userId": 1,
+      "name": "张少波",
+      "phone": "18510416568",
+      "address": "薛店镇南张村",
+      "status": 0,
+      "id": 3
+    },
+    {
+      "userId": 1,
+      "name": "张少波",
+      "phone": "18510416568",
+      "address": "薛店镇南张村1111",
+      "status": 1,
+      "id": 4
+    }
+  ]
 }

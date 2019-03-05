@@ -14,6 +14,8 @@ import LoginOne from "@/components/common/LoginOne.vue"
 import Target from "@/components/personal/components/target"
 import Refund from "@/components/personal/components/refund"
 import Address from "@/components/personal/components/address"
+import AddAddress from "@/components/personal/components/addAddress"
+import SetName from "@/components/personal/components/setName"
 
 const router = new Router({
   routes: [
@@ -32,11 +34,19 @@ const router = new Router({
       }
     },
     {
+      path:"/setName",
+      component:SetName,
+      name:"setName",
+      meta:{
+        flag:false
+      }
+    },
+    {
       path:"/target",
       component:Target,
       name:"target",
       meta:{
-        flag:true,
+        flag:false,
         title:"订单"
       }
     },
@@ -45,8 +55,16 @@ const router = new Router({
       component:Address,
       name:"address",
       meta:{
-        flag:true,
+        flag:false,
         title:"收货地址管理"
+      },
+    },
+    {
+      path:"/addAddress",
+      name:"addAddress",
+      component:AddAddress,
+      meta:{
+        flag:false
       }
     },
     {
@@ -72,7 +90,7 @@ const router = new Router({
       component:Cart,
       name:"cart",
       meta:{
-        flag:true,
+        flag:false,
         title:"购物车"
       }
     },
@@ -90,17 +108,15 @@ const router = new Router({
       component:Login,
       name:"login",
       meta:{
-        flag:true,
-        title:"登录"
-      },
+        flag:false
+      }
     },
     {
       path:"/loginTwo",
       component:LoginTwo,
       name:"loginTwo",
       meta:{
-        flag:false,
-        title:"手机号"
+        flag:false
       }
     },
     {
@@ -108,8 +124,7 @@ const router = new Router({
       component:LoginOne,
       name:"loginOne",
       meta:{
-        flag:false,
-        title:"登录首页"
+        flag:false
       }
     },
     {
@@ -117,15 +132,14 @@ const router = new Router({
       component:Registor,
       name:"registor",
       meta:{
-        flag:true,
-        title:"注册"
+        flag:false
       }
     }
   ]
 })
 router.beforeEach((to,from,next)=>{
   if(to.meta.flag){
-    if(store.state.personal.token){
+    if(store.state.personal.token!==undefined){
       next();
     }else{
       next("/login");

@@ -1,5 +1,5 @@
 <template>
-  <div class="address">
+  <div class="addAddress">
     <mt-header title="添加收货地址" class="header">
       <router-link to="/personal" slot="left">
         <mt-button icon="back"></mt-button>
@@ -7,36 +7,39 @@
     </mt-header>
     <div class="content">
       <label class="input-text item">
-        <input type="text" placeholder="收货人姓名">
+        <input type="text" :value="name" @input="handleInputs({id:1,e:$event})" placeholder="收货人姓名">
       </label>
       <label class="input-text item">
-        <input type="text" placeholder="手机号码">
+        <input type="text" :value="phone" @input="handleInputs({id:2,e:$event})"  placeholder="手机号码">
       </label>
       <label class="input-text item">
         <input type="text" placeholder="省份">
-        <select class="select" id="">
-            <option value="请选择">请选择</option>
+        <select class="select" @change="handleClickProvince()" ref = "selectProvince">
+            <option value="">请选择</option>
+            <option :value="item.area_code"  :name="item.area_name"  v-for="(item,index) in provinces">{{item.area_name}}</option>
         </select>
       </label>
       <label class="input-text item">
         <input type="text" placeholder="城市">
-        <select class="select" id="">
-            <option value="请选择">请选择</option>
+        <select class="select"  @change="handleClickCities()" ref = "selectCities">
+            <option value="">请选择</option>
+            <option :value="item.area_code" :val="item.area_name" v-for="(item,index) in cities">{{item.area_name}}</option>
         </select>
       </label>
       <label class="input-text item">
         <input type="text" placeholder="区县">
-        <select class="select" id="">
-            <option value="请选择">请选择</option>
+        <select class="select" @change="handleClickCounties()" ref = "selectCounties">
+            <option value="">请选择</option>
+            <option :value="item.area_code"  :val="item.area_name"  v-for="(item,index) in counties">{{item.area_name}}</option>
         </select>
       </label>
       <label class="input-text item items">
-        <input type="text" placeholder="详细地址">
+        <textarea class="area" :value="address"  @input="handleInputs({id:3,e:$event})" placeholder="详细地址"></textarea>
       </label>
       <p>
-
+        <input type="radio" :value="status" :checked="status==1?'checked':''" @click="handleChecked()">设为默认地址 
       </p>
-      <button class="btns" @click="handleTo()">确认添加</button>
+      <button class="btns" @click="handleTos()">确认添加</button>
     </div>
   </div>
 </template>
@@ -48,23 +51,47 @@ export default {
     return {};
   },
   created () {
-    this.handleProvices();  
+    this.handleProvices();
+    this.handleToId();  
   },
   computed: {
       ...Vuex.mapState({
-          // provices:state=>state.provices
+          provinces:state=>state.personal.provinces,
+          cities:state=>state.personal.cities,
+          counties:state=>state.personal.counties,
+          name:state=>state.personal.name,
+          phone:state=>state.personal.phone,
+          address:state=>state.personal.address,
+          status:state=>state.personal.status,
       })
   },
   methods: {
       ...Vuex.mapActions({
-          // handleProvices:"/personal/handleProvices"
-      })
+          handleProvices:"personal/handleProvices",
+          handleClickProvinces:"personal/handleClickProvinces",
+          handleClickCitie:"personal/handleClickCitie",
+          handleTo:"personal/handleTo",
+          handleToId:"personal/handleToId",
+          handleChecked:"personal/handleChecked"
+      }),
+      ...Vuex.mapMutations({
+         handleInputs:"personal/handleInputs"
+      }),
+      handleClickProvince(){
+        this.handleClickProvinces(this.$refs.selectProvince.value);
+      },
+      handleClickCities(index){
+        this.handleClickCitie(this.$refs.selectCities.value)
+      },
+      handleTos(){
+        this.handleTo(this.$router);
+      }
   }
 };
 </script>
 
-<style lang="scss">
-.address {
+<style lang="scss" scoped>
+.addAddress {
   width: 100%;
   height: 100%;
   position: relative;
@@ -97,6 +124,15 @@ export default {
     .items{
         height: 3rem;
         background: #fff;
+    }
+    .area{
+      width: 100%;
+      height: 100%;
+      border: none;
+      outline: none;
+      font-size: .3rem;
+      text-indent: .2rem;
+      padding-top: .3rem;
     }
     .item {
       border-bottom: 1px solid #666;

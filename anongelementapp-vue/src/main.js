@@ -12,10 +12,6 @@ import store from "./store";
 //引入mint-ui插件
 import Mint from "mint-ui"
 
-import {Cell,Checklist} from "mint-ui"
-Vue.component(Cell.name,Cell)
-Vue.component(Checklist.name,Checklist)
-
 Vue.use(Mint);
 // Vue.prototype.$axios = axios
 Vue.config.productionTip = false

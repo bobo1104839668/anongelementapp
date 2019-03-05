@@ -1,3 +1,4 @@
 import http from "../utils/http"
-
-export const Provices = (params)=>http("get","/api/categories/first_level?limit=7",params);
+// areas/childrenAreas?areaCode=110000 +
+export const Provices = ()=>http("get","/api/areas/nestedAreas");
+export const Cities = (params)=>http("get","/api/areas/childrenAreas",params);

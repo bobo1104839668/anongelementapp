@@ -22,7 +22,6 @@ export default {
   computed: {
     ...Vuex.mapState({
       phone: state => state.personal.phone,
-      result: state => state.result
     })
   },
   methods: {
@@ -37,16 +36,10 @@ export default {
         if (data.data.length) {
           this.$router.push({
             name: "loginTwo",
-            query:{
-                phone:this.phone
-            }
           });
         } else {
           this.$router.push({
             name: "registor",
-            query:{
-                phone:this.phone
-            }
           });
         }
       });

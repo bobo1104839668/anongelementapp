@@ -13,23 +13,14 @@ let state = {
 }
 
 let mutations = {
-    // handleToken(state,params){
-    //     if(state.personal.token){
-    //         params.push("/personal")
-    //     }else{
-    //         params.push("/login")
-    //     }
-    // }
+    handleToken(state,params){
+        params.push("/personal")
+    }
 }
 
 let actions = {
-    handleToken({commit,state},params){
-        if(state.personal.token){
-            params.push("/personal")
-        }else{
-            params.push("/login")
-        }
-        // commit("handleToken",params);
+    handleToken({commit},params){
+        commit("handleToken",params);
     }
 }
 

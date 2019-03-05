@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view/>
-    <Footer></Footer>
+    <Footer v-if="$route.meta.flag"></Footer>
   </div>
 </template>
 
@@ -18,5 +18,8 @@ export default {
 #app{
   width: 100%;
   height: 100%;
+}
+.mintui-back{
+  font-size: .3rem !important;
 }
 </style>

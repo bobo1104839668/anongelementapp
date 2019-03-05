@@ -11,14 +11,14 @@
         <input type="tel" placeholder="填写验证码">
       </label>
       <label class="input-text item">
-        <input type="text"  placeholder="用户昵称" @input="handleInput({id:3,e:$event})">
+        <input type="text" :value="username" placeholder="用户昵称" @input="handleInput({id:3,e:$event})">
       </label>
       <label class="input-text item">
-        <input type="password" placeholder="设置密码(6-20位字符)" @input="handleInput({id:1,e:$event})">
+        <input type="password" :value="password" placeholder="设置密码(6-20位字符)" @input="handleInput({id:1,e:$event})">
         <mt-switch></mt-switch>
       </label>
       <router-link :to="{path:'/personal'}">
-        <button class="btns" @click="handleRegistor()">注册</button>
+        <button class="btns" @click="handleRegistors()">注册</button>
       </router-link>
     </div>
     <mt-header title="设置密码" class="header">
@@ -32,42 +32,39 @@
 <script>
 import Vuex from "vuex"
 import {setCookie} from "../../utils/auth"
+import axios from "axios"
 export default {
-    data () {
-      return {
-        phone:this.phone  
-      }
-    },
-    created () {
-      let {phone} = this.$route.query;
-    },
     computed: {
-      username:state=>state.personal.username,
-      password:state=>state.personal.password
+     ...Vuex.mapState({
+        username:state=>state.personal.username,
+        password:state=>state.personal.password,
+        phone:state=>state.personal.phone
+     })
     },
     methods: {
       ...Vuex.mapActions({
         handleInput: "personal/handleInput",
         handleRegistor:"personal/handleRegistor"
       }),
-      handleRegistor(){
-        axios({
-            method:"post",
-            url:"http://localhost:3000/users",
-            data:{
-                username:username,
-                phone:phone,
-                password:password,
-            }
-        }).then((data)=>{
-            setCookie(username)
-            if(data){
-              this.$router.push({
-                name:'personal'
-              })
-            }
-        })
+      handleRegistors(){
+        this.handleRegistor(this.$router);
       }
+      // handleRegistor(){
+      //   axios({
+      //       method:"post",
+      //       url:"http://localhost:3000/users",
+      //       data:{
+      //           phone:this.phone,
+      //       }
+      //   }).then((data)=>{
+      //       setCookie(username)
+      //       if(data){
+      //         this.$router.push({
+      //           name:'personal'
+      //         })
+      //       }
+      //   })
+      // }
     },
 }
 </script>
