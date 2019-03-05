@@ -6,20 +6,23 @@
 </template>
 
 <script>
-import Footer from "./components/footer.vue"
+import Footer from "./components/common/footer.vue"
 export default {
-  data () {
-    return {
-      
-    }
-  },
   components: {
     "Footer" : Footer
+<<<<<<< HEAD
   }
+=======
+  },
+>>>>>>> shaobo
 }
 </script>
+<<<<<<< HEAD
 
 <style>
+=======
+<style lang="scss">
+>>>>>>> shaobo
 #app{
   width: 100%;
   height: 100%;

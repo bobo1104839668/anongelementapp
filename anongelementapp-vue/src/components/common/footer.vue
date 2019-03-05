@@ -7,11 +7,16 @@
           <span>{{item.name}}</span>
         </router-link>
       </li>
+       <li @click="handleToken">
+          <i class="iconfont" >&#xe606;</i>
+          <span>个人中心</span>
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
+import Vuex from "vuex"
 export default {
   data() {
     return {
@@ -24,25 +29,41 @@ export default {
         {
           name: "分类",
           icon: "&#xe60e;",
-          path: "/classification"
+          path: "/classific"
         },
         {
           name: "购物车",
           icon: "&#xe66e;",
-          path: "/buyCar"
-        },
-        {
-          name: "个人中心",
-          icon: "&#xe606;",
-          path: "/personal"
+          path: "/cart"
         }
+<<<<<<< HEAD
+<<<<<<< HEAD
       ]
+=======
+      ],
+>>>>>>> shaobo
     };
+=======
+      ]
+    }
+  },
+  methods: {
+    ...Vuex.mapActions({
+      handleTokens:"handleToken"
+    }),
+    handleToken(){
+      this.handleTokens(this.$router);
+    }
+>>>>>>> shaobo
   }
 };
 </script>
 
+<<<<<<< HEAD
 <style lang="">
+=======
+<style lang="scss">
+>>>>>>> shaobo
 .footer {
   width: 100%;
   height: 0.98rem;
@@ -50,6 +71,7 @@ export default {
   left: 0;
   bottom: 0;
   background: #ffffff;
+  z-index: 111;
 }
 .footer > ul {
   width: 100%;

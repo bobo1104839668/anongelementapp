@@ -1,6 +1,6 @@
 <template>
-    <div class="personal">
-        个人中心
+    <div class="classification">
+        分类
     </div>
 </template>
 
@@ -10,6 +10,10 @@ export default {
 }
 </script>
 
+<<<<<<< HEAD
 <style lang="">
+=======
+<style lang="scss">
+>>>>>>> shaobo
     
 </style>

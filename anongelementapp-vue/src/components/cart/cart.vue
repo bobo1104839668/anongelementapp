@@ -1,6 +1,6 @@
 <template>
-    <div class="home">
-        首页
+    <div class="buyCar">
+        购物车
     </div>
 </template>
 
@@ -10,6 +10,10 @@ export default {
 }
 </script>
 
+<<<<<<< HEAD
 <style lang="">
+=======
+<style lang="scss">
+>>>>>>> shaobo
     
 </style>
