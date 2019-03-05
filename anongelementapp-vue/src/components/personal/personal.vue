@@ -1,22 +1,10 @@
 <template>
-<<<<<<< HEAD
-    <div class="personal">
-        个人中心
-    </div>
-</template>
-
-<script>
-export default {
-    
-}
-</script>
-
-<style lang="">
-    
-=======
   <div class="personal">
     <mt-header title="个人中心" class="header">
         <mt-button slot="right">
+  <div class="personal">
+    <mt-header title="个人中心" class="header">
+        <mt-button slot="right" @click="handleSets()">
             <i class="iconfont">&#xe62f;</i>
         </mt-button>
     </mt-header>
@@ -25,6 +13,7 @@ export default {
             <i class="iconfont">&#xe620;</i>
         </a>
         <h1>bobo</h1>
+        <h1>{{username}}</h1>
         <div class="row">
             <a href="##" class="as">
                 <div>0</div>
@@ -92,8 +81,39 @@ export default {
 <script>
 
 import Vuex from "vuex"
+import Vuex from "vuex"
+import {getCookie} from "../../utils/auth"
+import axios from "axios"
 export default {
+    data() {
+        return {
+            username:""
+        }
+    },
+    computed: {
+    //   ...Vuex.mapState({
+    //       username:state=>state.personal.username
+    //   })  
+    },
+    created() {
+        let username = getCookie("username");
+        this.username = username;
+    },
     methods: {
+        // ...Vuex.mapActions({
+        //     handleSet:"personal/handleSet"
+        // }),
+        handleSets(){
+            axios({
+                method:"get",
+                url:"http://localhost:3000/users?username="+getCookie("username"),
+            }).then((data)=>{
+                this.$router.push({
+                    name:"setName",
+                    query:data.data[0]
+                })
+            })
+        },
         handleClickIcon(index){
             this.$router.push({
                 name:"target",
@@ -227,5 +247,4 @@ export default {
       margin-right: .2rem;
   }
 }
->>>>>>> shaobo
 </style>
