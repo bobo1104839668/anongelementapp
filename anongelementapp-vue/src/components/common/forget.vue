@@ -2,94 +2,62 @@
   <div class="loginTwo">
     <!-- 未注册过和注册过两个不同的页面 -->
     <!-- 未注册过 -->
-    <mt-header title="账号登录" class="header">
-      <router-link to="/home" slot="left">
+    <mt-header title="修改密码" class="header">
+      <router-link to="/setName" slot="left">
         <mt-button icon="back"></mt-button>
       </router-link>
     </mt-header>
     <div class="content">
-      <p>您的手机号已注册请输入登录密码</p>
-      <p class="ps">
-        您的手机号：
-        <span>{{phone}}</span>
-      </p>
       <label class="input-text item">
-        <input type="password" placeholder="输入密码" :value="password" @input="handleInput({id:1,e:$event})">
+        <input type="password" placeholder="原密码" :value="password" @input="handleInput({id:1,e:$event})">
       </label>
-      <button class="btn" @click="handleForegt(phone)">忘记密码</button>
-        <button class="btns" @click="handleClicks()">登录</button>
+      <label class="input-text item">
+        <input type="password" placeholder="设置新密码" :value="passwords" @input="handleInputs($event)" >
+        <!-- <mt-switch v-model="value" @click="handleToggle()"></mt-switch> -->
+      </label>
+        <button class="btns" @click="handleUpdatePsd()">修改</button>
     </div>
   </div>
 </template>
 
 <script>
-/**
- * JSONP请求工具
- * @param url 请求的地址
- * @param data 请求的参数
- * @returns {Promise<any>}
- */
-const request = ({ url, data }) => {
-  return new Promise((resolve, reject) => {
-    // 处理传参成xx=yy&aa=bb的形式
-    const handleData = data => {
-      const keys = Object.keys(data);
-      const keysLen = keys.length;
-      return keys.reduce((pre, cur, index) => {
-        const value = data[cur];
-        const flag = index !== keysLen - 1 ? "&" : "";
-        return `${pre}${cur}=${value}${flag}`;
-      }, "");
-    };
-    // 动态创建script标签
-    const script = document.createElement("script");
-    // 接口返回的数据获取
-    window.jsonpCb = res => {
-      document.body.removeChild(script);
-      delete window.jsonpCb;
-      resolve(res);
-    };
-    script.src = `${url}?${handleData(data)}&cb=jsonpCb`;
-    document.body.appendChild(script);
-  });
-};
 import Vuex from "vuex"
 export default {
+    data () {
+        return {
+            value:true,
+            type:""     
+        }
+    },
   created() {
     let { phone } = this.$route.query;
-    // 使用方式
-    // request({
-    //   url: "http://www.51talk.com/passport/getMobileCode",
-    //   data: {
-    //     // 传参
-    //     mobile: phone
-    //   }
-    // }).then(res => {
-    //   console.log(res);
-    // });
   },
   computed: {
       ...Vuex.mapState({
           password:state=>state.personal.password,
-          phone:state=>state.personal.phone,
+          passwords:state=>state.personal.passwords,
       })
   },
   methods: {
       ...Vuex.mapActions({
           handleInput:"personal/handleInput",
-          handleClick:"personal/handleClickLogin",
+          handleUpdatePsds:"personal/handleUpdatePsds",
+          handleInputs:"personal/handleInputs"
       }),
-      handleClicks(){
-        this.handleClick(this.$router);
+      handleUpdatePsd(){
+        this.handleUpdatePsds(this.$router);
       },
-      handleForegt(phone){
-        this.$router.push({
-          name:"forget",
-          query:{
-            phone
-          }
-        })
+      handleToggle(){
+          this.value = !this.value;
       }
+  },
+  mounted() {
+      if(this.value){
+          this.type="text"
+      }else{
+           this.type="password"
+      }
+      console.log(this.value)
   },
 };
 </script>
@@ -142,6 +110,7 @@ export default {
     border-bottom: 1px solid #d6d6d6;
     border-top: 1px solid #d6d6d6;
     display: flex;
+    background: #fff;
     input {
       font-size: 0.26rem;
       width: 100%;

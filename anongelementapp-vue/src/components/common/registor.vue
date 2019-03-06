@@ -6,28 +6,18 @@
       </router-link>
     </mt-header>
     <div class="content">
-      <p>已发送验证码至您的手机</p>
+      <p>已发送验证码至您的手机{{phone}}</p>
       <label class="input-text item">
         <input type="tel" placeholder="填写验证码">
       </label>
       <label class="input-text item">
-        <input type="text"  placeholder="用户昵称" @input="handleInput({id:3,e:$event})">
-      </label>
-      <label class="input-text item">
-        <input type="password" placeholder="设置密码(6-20位字符)" @input="handleInput({id:1,e:$event})">
-        <mt-switch></mt-switch>
-      </label>
-       <label class="input-text item">
-        <button class="btns" @click="handleRegistor()">注册</button>
-        <input type="text" :value="username" placeholder="用户昵称" @input="handleInput({id:3,e:$event})">
+        <input type="text" :value="username"  placeholder="用户昵称" @input="handleInput({id:3,e:$event})">
       </label>
       <label class="input-text item">
         <input type="password" :value="password" placeholder="设置密码(6-20位字符)" @input="handleInput({id:1,e:$event})">
         <mt-switch></mt-switch>
       </label>
-      <router-link :to="{path:'/personal'}">
-        <button class="btns" @click="handleRegistors()">注册</button>
-      </router-link>
+      <button class="btns" @click="handleRegistors()">注册</button>
     </div>
     <mt-header title="设置密码" class="header">
       <router-link to="/home" slot="left">
@@ -54,24 +44,23 @@ export default {
         handleInput: "personal/handleInput",
         handleRegistor:"personal/handleRegistor"
       }),
-      handleRegistor(){
-        axios({
-            method:"post",
-            url:"http://localhost:3000/users",
-            data:{
-                username:username,
-                phone:phone,
-                password:password,
-            }
-        }).then((data)=>{
-            setCookie(username)
-            if(data){
-              this.$router.push({
-                name:'personal'
-              })
-            }
-        })
-      },
+      // handleRegistor(){
+      //   axios({
+      //       method:"post",
+      //       url:"http://localhost:3000/users",
+      //       data:{
+      //           username:username,
+      //           phone:phone,
+      //           password:password,
+      //       }
+      //   }).then((data)=>{
+      //       setCookie(username)
+      //       if(data){
+      //         this.$router.push({
+      //           name:'personal'
+      //         })
+      //       }
+      //   })
       handleRegistors(){
         this.handleRegistor(this.$router);
       }
@@ -134,6 +123,7 @@ export default {
     border-bottom: 1px solid #d6d6d6;
     border-top: 1px solid #d6d6d6;
     display: flex;
+    background: #fff;
     input {
       font-size: 0.26rem;
       width: 100%;

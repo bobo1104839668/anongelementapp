@@ -12,18 +12,23 @@ import Registor from "../components/common/registor.vue"
 import Search from "../components/home/two_page/search.vue"
 import LoginTwo from "@/components/common/loginTwo.vue"
 import LoginOne from "@/components/common/LoginOne.vue"
+import Forget from "@/components/common/forget.vue"
 import Target from "@/components/personal/components/target"
 import Refund from "@/components/personal/components/refund"
 import Address from "@/components/personal/components/address"
 import AddAddress from "@/components/personal/components/addAddress"
 import SetName from "@/components/personal/components/setName"
+import UpdateAddress from "@/components/personal/components/updateAddress"
 
 const router = new Router({
   routes: [
     {
       path: "/",
       component: Home,
-      name: "home"
+      name: "home",
+      meta:{
+        flag:true
+      }
     },
     {
       path: "/home",
@@ -31,19 +36,22 @@ const router = new Router({
       name: "home",
       meta: {
         flag: true,
-        title: "首页"
+      }
+    },
+    {
+      path: "/forget",
+      component: Forget,
+      name: "forget",
+      meta: {
+        flag: false,
       }
     },
     {
       path: "/search",
       component: Search,
       name: "search",
-      path: "/target",
-      component: Target,
-      name: "target",
       meta: {
         flag: true,
-        title: "二级页面"
       }
     },
     {
@@ -68,7 +76,7 @@ const router = new Router({
       component: Address,
       name: "address",
       meta: {
-        flag: true,
+        flag: false,
         title: "收货地址管理"
       }
     },
@@ -82,13 +90,6 @@ const router = new Router({
       }
     },
     {
-      path: "/classific",
-      component: Classific,
-      name: "classific",
-      flag: false,
-      title: "收货地址管理"
-    },
-    {
       path: "/addAddress",
       name: "addAddress",
       component: AddAddress,
@@ -97,24 +98,20 @@ const router = new Router({
       }
     },
     {
-      path: "/refund",
-      component: Refund,
-      name: "refund",
-      meta: {
-        flag: true,
-        title: "退款"
-      }
-    },
-    {
-      path: "/cart",
-      component: Cart,
-      name: "cart",
       path: "/classific",
       component: Classific,
       name: "classific",
       meta: {
         flag: true,
         title: "分类"
+      }
+    },
+    {
+      path: "/updateAddress",
+      component: UpdateAddress,
+      name: "updateAddress",
+      meta: {
+        flag: false,
       }
     },
     {
@@ -178,7 +175,7 @@ router.beforeEach((to, from, next) => {
     if (store.state.personal.token !== undefined) {
       next();
     } else {
-      next("/login");
+      next("/loginOne");
     }
   } else {
     next();

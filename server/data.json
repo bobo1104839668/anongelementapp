@@ -23,24 +23,19 @@
       "password": "111",
       "phone": "1111111111",
       "id": 4
-    }
-  ],
-  "address": [
-    {
-      "userId": 1,
-      "name": "张少波",
-      "phone": "18510416568",
-      "address": "薛店镇南张村",
-      "status": 0,
-      "id": 3
     },
     {
-      "userId": 1,
-      "name": "张少波",
-      "phone": "18510416568",
-      "address": "薛店镇南张村1111",
-      "status": 1,
-      "id": 4
+      "username": "zhanglan",
+      "password": "123456",
+      "phone": "18610086559",
+      "id": 5
+    },
+    {
+      "username": "",
+      "password": "11111",
+      "phone": "18712345678",
+      "id": 6
     }
-  ]
+  ],
+  "address": []
 }

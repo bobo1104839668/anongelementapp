@@ -7,10 +7,6 @@
           <span>{{item.name}}</span>
         </router-link>
       </li>
-       <li @click="handleToken">
-          <i class="iconfont" >&#xe606;</i>
-          <span>个人中心</span>
-      </li>
     </ul>
   </div>
 </template>
@@ -44,14 +40,6 @@ export default {
       ]
     };
   },
-  methods: {
-    ...Vuex.mapActions({
-      handleTokens:"handleToken"
-    }),
-    handleToken(){
-      this.handleTokens(this.$router);
-    }
-  }
 };
 </script>
 

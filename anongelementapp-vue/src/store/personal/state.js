@@ -3,6 +3,7 @@ import { getCookie } from "../../utils/auth";
 export default{
     phone:"",
     password:"",
+    passwords:"",
     username:"",
     token: "" || getCookie(),
     provinces:[],
@@ -12,5 +13,6 @@ export default{
     address:'',
     id:"",
     addresss:[],
-    status:0
+    status:0,
+    userId:""
 }

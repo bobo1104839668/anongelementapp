@@ -1,20 +1,20 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\MRwang\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add better scroll
+  D:\node\node.exe C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js install
 
 PATH: 
-  C:\Ruby24-x64\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\OpenCL SDK\3.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\3.0\bin\x64;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\MongoDB\Server\3.2\bin;C:\Program Files\VisualSVN Server\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Microsoft VS Code\bin;C:\Users\MRwang\AppData\Roaming\npm
+  C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Microsoft VS Code\bin;C:\Program Files\VisualSVN Server\bin;C:\Program Files\TortoiseSVN\bin;D:\node\;C:\Users\Administrator\AppData\Local\Yarn\bin;C:\Program Files\MongoDB\Server\3.2\bin;D:\Git\cmd;D:\ruby\Ruby24-x64\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;D:\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Roaming\npm
 
 Yarn version: 
-  1.13.0
+  1.12.3
 
 Node version: 
-  10.15.0
+  8.11.4
 
 Platform: 
   win32 x64
 
 Trace: 
-  Error: ENOENT: no such file or directory, copyfile 'C:\Users\MRwang\AppData\Local\Yarn\Cache\v4\npm-inherits-2.0.1-b17d08d326b4423e568eff719f91b0b1cbdf69f1\node_modules\inherits\package.json' -> 'H:\第三阶段\node\案例\kuangjia\nongren\wang\anongelementapp-vue\node_modules\assert\node_modules\inherits\package.json'
+  Error: ENOENT: no such file or directory, copyfile 'C:\Users\Administrator\AppData\Local\Yarn\Cache\v4\npm-inherits-2.0.1-b17d08d326b4423e568eff719f91b0b1cbdf69f1\node_modules\inherits\inherits.js' -> 'E:\a_1000phone\node\vue\practice\shaobo\anongelementapp-vue\node_modules\assert\node_modules\inherits\inherits.js'
 
 npm manifest: 
   {
@@ -30,6 +30,10 @@ npm manifest:
     },
     "dependencies": {
       "axios": "^0.18.0",
+      "better-scroll": "^1.14.1",
+      "js-cookie": "^2.2.0",
+      "jsonwebtoken": "^8.5.0",
+      "mint-ui": "^2.2.13",
       "swiper": "^4.5.0",
       "vue": "^2.5.2",
       "vue-router": "^3.0.1",

@@ -1,6 +1,6 @@
 <template>
   <div class="addAddress">
-    <mt-header title="添加收货地址" class="header">
+    <mt-header title="修改收货地址" class="header">
       <router-link to="/personal" slot="left">
         <mt-button icon="back"></mt-button>
       </router-link>
@@ -39,7 +39,7 @@
       <p>
         <input type="radio" :value="status" :checked="status==1?'checked':''" @click="handleChecked($event)">设为默认地址 
       </p>
-      <button class="btns" @click="handleTos()">确认添加</button>
+      <button class="btns" :value="id" @click="handleToUpdate()">确认修改</button>
     </div>
   </div>
 </template>
@@ -48,11 +48,15 @@
 import Vuex from "vuex";
 export default {
   data() {
-    return {};
+    return {
+      id:""
+    };
   },
   created () {
     this.handleProvices();
     this.handleToId();  
+    let {id} = this.$route.query;
+    this.id = id;
   },
   computed: {
       ...Vuex.mapState({
@@ -63,6 +67,7 @@ export default {
           phone:state=>state.personal.phone,
           address:state=>state.personal.address,
           status:state=>state.personal.status,
+          userId:state=>state.personal.userId,
       })
   },
   methods: {
@@ -70,7 +75,7 @@ export default {
           handleProvices:"personal/handleProvices",
           handleClickProvinces:"personal/handleClickProvinces",
           handleClickCitie:"personal/handleClickCitie",
-          handleTo:"personal/handleTo",
+          handleToUpdates:"personal/handleToUpdates",
           handleToId:"personal/handleToId",
           handleChecked:"personal/handleChecked",
           handleClickCounties:"personal/handleClickCounties"
@@ -84,8 +89,8 @@ export default {
       handleClickCities(index){
         this.handleClickCitie(this.$refs.selectCities.value)
       },
-      handleTos(){
-        this.handleTo(this.$router);
+      handleToUpdate(){
+        this.handleToUpdates({route:this.$router,id:this.id});
       }
   }
 };

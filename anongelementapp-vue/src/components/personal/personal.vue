@@ -1,9 +1,6 @@
 <template>
   <div class="personal">
     <mt-header title="个人中心" class="header">
-        <mt-button slot="right">
-  <div class="personal">
-    <mt-header title="个人中心" class="header">
         <mt-button slot="right" @click="handleSets()">
             <i class="iconfont">&#xe62f;</i>
         </mt-button>
@@ -12,7 +9,6 @@
         <a href="##" class="icons">
             <i class="iconfont">&#xe620;</i>
         </a>
-        <h1>bobo</h1>
         <h1>{{username}}</h1>
         <div class="row">
             <a href="##" class="as">
@@ -80,7 +76,6 @@
 
 <script>
 
-import Vuex from "vuex"
 import Vuex from "vuex"
 import {getCookie} from "../../utils/auth"
 import axios from "axios"
@@ -157,7 +152,7 @@ export default {
       h1{
         width: 100%;
         font-size: .32rem;
-        color: #fff;
+        color: #000;
         text-align: center;
         margin-bottom: .1rem;
       }

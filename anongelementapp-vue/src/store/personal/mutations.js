@@ -7,7 +7,6 @@ export default{
             case 2:state.phone=params.e.target.value;break;
             case 3:state.username=params.e.target.value;break;
         }
-        console.log(params.e.target.value)
     },
     handleClick(state){
         state.token = getCookie();
@@ -57,6 +56,8 @@ export default{
         state.phone = data.phone;
         state.status = data.status;
         state.address = data.address;
+        state.id = data.id,
+        state.userId = data.userId
     },
     handleSet(state,data){
         state.name = data.username;
@@ -64,5 +65,11 @@ export default{
     },
     hanleToout(state){
         state.token = ""
+    },
+    handleInputss(state,params){
+        state.passwords = params.target.value;
+    },
+    handles(state){
+        state.token = getCookie();
     }
 }

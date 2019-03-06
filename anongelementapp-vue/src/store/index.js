@@ -12,37 +12,22 @@ let state = {
     flag: true
 }
 
-let mutations = {
-    // handleToken(state,params){
-    //     if(state.personal.token){
+
+let actions = {
+    // handleToken({ commit, state }, params) {
+    //     if (state.personal.token) {
     //         params.push("/personal")
-    //     }else{
+    //     } else {
     //         params.push("/login")
     //     }
+    //     // commit("handleToken",params);
     // }
 }
 
-let actions = {
-    handleToken({ commit, state }, params) {
-        if (state.personal.token) {
-            params.push("/personal")
-        } else {
-            params.push("/login")
-        }
-        // commit("handleToken",params);
-    }
-}
-
 let mutations = {
-    handleToken(state, params) {
-        params.push("/personal")
-    }
-}
-
-let actions = {
-    handleToken({ commit }, params) {
-        commit("handleToken", params);
-    }
+    // handleToken(state, params) {
+    //     params.push("/personal")
+    // }
 }
 
 let getters = {
