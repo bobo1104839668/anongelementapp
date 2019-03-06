@@ -10,6 +10,7 @@ Vue.use(Vuex);
 
 let state = {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 =======
@@ -25,27 +26,27 @@ let state = {
 =======
     flag:true
 >>>>>>> shaobo
+=======
+    flag:true
+>>>>>>> shaobo
 }
 
-let mutations = {
-    // handleToken(state,params){
-    //     if(state.personal.token){
+
+let actions = {
+    // handleToken({ commit, state }, params) {
+    //     if (state.personal.token) {
     //         params.push("/personal")
-    //     }else{
+    //     } else {
     //         params.push("/login")
     //     }
+    //     // commit("handleToken",params);
     // }
 }
 
-let actions = {
-    handleToken({commit,state},params){
-        if(state.personal.token){
-            params.push("/personal")
-        }else{
-            params.push("/login")
-        }
-        // commit("handleToken",params);
-    }
+let mutations = {
+    // handleToken(state, params) {
+    //     params.push("/personal")
+    // }
 }
 
 let getters = {
@@ -57,7 +58,7 @@ const store = new Vuex.Store({
     actions,
     mutations,
     getters,
-    modules:{
+    modules: {
         cart,
         home,
         classific,

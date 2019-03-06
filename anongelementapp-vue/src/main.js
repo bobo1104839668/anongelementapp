@@ -11,6 +11,7 @@ import store from "./store"
 import MintUI from 'mint-ui'
 Vue.use(MintUI)
 // import axios from "axios"
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -25,8 +26,11 @@ Vue.use(MintUI)
 >>>>>>> 42904599a063ca6eeb1631cc6ca9c36914a6f317
 =======
 >>>>>>> shaobo
+=======
+// axios.defaults.withCredentials = true
+// axios.defaults.withCredentials = true
+>>>>>>> shaobo
 //引入mint-ui插件
-import Mint from "mint-ui"
 
 import {Cell,Checklist} from "mint-ui"
 Vue.component(Cell.name,Cell)
@@ -35,11 +39,17 @@ Vue.component(Checklist.name,Checklist)
 Vue.use(Mint);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> master
 >>>>>>> 42904599a063ca6eeb1631cc6ca9c36914a6f317
 >>>>>>> shaobo
 =======
+>>>>>>> shaobo
+=======
+
+//引入mint-ui插件
+
 >>>>>>> shaobo
 // Vue.prototype.$axios = axios
 Vue.config.productionTip = false

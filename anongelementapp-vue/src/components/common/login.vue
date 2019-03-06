@@ -1,5 +1,6 @@
 <template>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <div class="login">
 <<<<<<< HEAD
         登录
@@ -18,6 +19,8 @@
         </div>
 >>>>>>> shaobo
 =======
+=======
+>>>>>>> shaobo
   <div class="login">
     <mt-header title="手机登录" class="header">
       <router-link to="/home" slot="left">
@@ -30,6 +33,9 @@
         <input type="tel" :value="phone" @input="handleInput({id:2,e:$event})" placeholder="手机号">
       </label>
       <button class="btns" @click="handleTo()">下一步</button>
+<<<<<<< HEAD
+>>>>>>> shaobo
+=======
 >>>>>>> shaobo
     </div>
   </div>
@@ -38,18 +44,27 @@
 <script>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 export default {
     
 }
 </script>
 
 <style>
+=======
+>>>>>>> shaobo
 
-=======
 import Vuex from "vuex"
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> shaobo
 import Vuex from "vuex";
+import { Toast } from "mint-ui";
 import axios from "axios";
+<<<<<<< HEAD
+>>>>>>> shaobo
+=======
 >>>>>>> shaobo
 export default {
   computed: {
@@ -63,26 +78,34 @@ export default {
       handleInput: "personal/handleInput"
     }),
     handleTo() {
-      axios({
-        method: "get",
-        url: "http://localhost:3000/users?phone="+this.phone,
-      }).then(data => {
-        if (data.data.length) {
-          this.$router.push({
-            name: "loginTwo",
-            query:{
-                phone:this.phone
-            }
-          });
-        } else {
-          this.$router.push({
-            name: "registor",
-            query:{
-                phone:this.phone
-            }
-          });
-        }
-      });
+      let reg = /^(13|14|15|17|18|19)[0-9]{9}$/;
+      if (reg.test(this.phone)) {
+        axios({
+          method: "get",
+          url: "http://localhost:3000/users?phone=" + this.phone
+        }).then(data => {
+          if (data.data.length) {
+            this.$router.push({
+              name: "loginTwo",
+              query: {
+                phone: this.phone
+              }
+            });
+          } else {
+            this.$router.push({
+              name: "registor",
+              query: {
+                phone: this.phone
+              }
+            });
+          }
+        });
+      } else {
+        let instance = Toast("手机号格式有误");
+        setTimeout(() => {
+          instance.close();
+        }, 2000);
+      }
     }
   }
 };
@@ -143,5 +166,4 @@ export default {
     outline: none;
   }
 }
->>>>>>> shaobo
 </style>

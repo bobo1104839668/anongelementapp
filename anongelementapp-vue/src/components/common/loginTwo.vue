@@ -14,10 +14,17 @@
         <span>{{phone}}</span>
       </p>
       <label class="input-text item">
+<<<<<<< HEAD
         <input type="password" placeholder="输入密码" :value="password" @input="handleInputP({id:1,e:$event})">
       </label>
       <button class="btn">忘记密码</button>
         <button class="btns" @click="handleClick(this.$router)">登录</button>
+=======
+        <input type="password" placeholder="输入密码" :value="password" @input="handleInput({id:1,e:$event})">
+      </label>
+      <button class="btn" @click="handleForegt(phone)">忘记密码</button>
+        <button class="btns" @click="handleClicks()">登录</button>
+>>>>>>> shaobo
     </div>
   </div>
 </template>
@@ -70,15 +77,36 @@ export default {
   },
   computed: {
       ...Vuex.mapState({
+<<<<<<< HEAD
           password:state=>state.password,
           phone:state=>state.phone
+=======
+          password:state=>state.personal.password,
+          phone:state=>state.personal.phone,
+>>>>>>> shaobo
       })
   },
   methods: {
       ...Vuex.mapActions({
           handleInput:"personal/handleInput",
+<<<<<<< HEAD
           handleClick:"personal/handleClick"
       }),
+=======
+          handleClick:"personal/handleClickLogin",
+      }),
+      handleClicks(){
+        this.handleClick(this.$router);
+      },
+      handleForegt(phone){
+        this.$router.push({
+          name:"forget",
+          query:{
+            phone
+          }
+        })
+      }
+>>>>>>> shaobo
   },
 };
 </script>

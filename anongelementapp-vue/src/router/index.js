@@ -11,6 +11,7 @@ import Login from "../components/common/login.vue"
 import Registor from "../components/common/registor.vue"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import Search from "../components/home/two_page/search.vue"
 =======
 <<<<<<< HEAD
@@ -20,11 +21,17 @@ import Search from "../components/home/two_page/search.vue"
 >>>>>>> 42904599a063ca6eeb1631cc6ca9c36914a6f317
 =======
 >>>>>>> shaobo
+=======
+import Search from "../components/home/two_page/search.vue"
+import Search from "../components/home/two_page/search.vue"
+>>>>>>> shaobo
 import LoginTwo from "@/components/common/loginTwo.vue"
 import LoginOne from "@/components/common/LoginOne.vue"
+import Forget from "@/components/common/forget.vue"
 import Target from "@/components/personal/components/target"
 import Refund from "@/components/personal/components/refund"
 import Address from "@/components/personal/components/address"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -33,10 +40,16 @@ import Address from "@/components/personal/components/address"
 >>>>>>> shaobo
 =======
 >>>>>>> shaobo
+=======
+import AddAddress from "@/components/personal/components/addAddress"
+import SetName from "@/components/personal/components/setName"
+import UpdateAddress from "@/components/personal/components/updateAddress"
+>>>>>>> shaobo
 
 const router = new Router({
   routes: [
     {
+<<<<<<< HEAD
       path:"/",
       component:Home,
       name:"home"
@@ -213,18 +226,222 @@ const router = new Router({
         flag:true,
 >>>>>>> shaobo
         title:"注册"
+=======
+      path: "/",
+      component: Home,
+      name: "home",
+      meta: {
+        flag: true
+      }
+    },
+    {
+      path: "/home",
+      component: Home,
+      name: "home",
+      meta: {
+        flag: true,
+      }
+    },
+    {
+      path: "/target",
+      component: Target,
+      name: "target",
+      meta: {
+        flag: true,
+        title: "二级页面"
+      }
+    },
+    {
+      path: "/address",
+      component: Address,
+      name: "address",
+      meta: {
+        flag: true,
+        title: "收货地址管理"
+      }
+    }, {
+      path: "/forget",
+      component: Forget,
+      name: "forget",
+      meta: {
+        flag: false,
+      }
+    },
+    {
+      path: "/search",
+      component: Search,
+      name: "search",
+      meta: {
+        flag: true,
+      }
+    },
+    {
+      path: "/setName",
+      component: SetName,
+      name: "setName",
+      meta: {
+        flag: false
+      }
+    },
+    {
+      path: "/classific",
+      component: Classific,
+      name: "classific",
+      meta: {
+        flag: true,
+        title: "分类"
+      }
+    }, {
+      path: "/target",
+      component: Target,
+      name: "target",
+      meta: {
+        flag: false,
+        title: "订单"
+      }
+    },
+    {
+      path: "/address",
+      component: Address,
+      name: "address",
+      meta: {
+        flag: false,
+        title: "收货地址管理"
+      }
+    },
+    {
+      path: "/personal",
+      component: Personal,
+      name: "personal",
+      meta: {
+        flag: true,
+        title: "个人中心"
+      }
+    },
+    {
+      path: "/login",
+      component: Login,
+      name: "login",
+      meta: {
+        flag: true,
+        title: "登录"
+      }
+    }, {
+      path: "/refund",
+      component: Refund,
+      name: "refund",
+      meta: {
+        flag: true,
+        title: "退款"
+      }
+    },
+    {
+      path: "/addAddress",
+      name: "addAddress",
+      component: AddAddress,
+      meta: {
+        flag: false
+      }
+    },
+    {
+      path: "/classific",
+      component: Classific,
+      name: "classific",
+      meta: {
+        flag: true,
+        title: "分类"
+      }
+    },
+    {
+      path: "/updateAddress",
+      component: UpdateAddress,
+      name: "updateAddress",
+      meta: {
+        flag: false,
+      }
+    },
+    {
+      path: "/cart",
+      component: Cart,
+      name: "cart",
+      meta: {
+        flag: false,
+        title: "购物车"
+      }
+    },
+    {
+      path: "/personal",
+      component: Personal,
+      name: "personal",
+      meta: {
+        flag: true,
+        title: "个人中心"
+      }
+    },
+    {
+      path: "/login",
+      component: Login,
+      name: "login",
+      meta: {
+        flag: false,
+        title: "登录"
+      },
+    },
+    {
+      path: "/loginTwo",
+      component: LoginTwo,
+      name: "loginTwo",
+      meta: {
+        flag: false,
+        title: "手机号"
+      }
+    },
+    {
+      path: "/loginOne",
+      component: LoginOne,
+      name: "loginOne",
+      meta: {
+        flag: false,
+        title: "登录首页"
+      }
+    },
+    {
+      path: "/registor",
+      component: Registor,
+      name: "registor",
+      meta: {
+        flag: true,
+        title: "注册"
+      }
+    }, {
+      path: "/loginOne",
+      component: LoginOne,
+      name: "loginOne",
+      meta: {
+        flag: false,
+        title: "登录首页"
+      }
+    },
+    {
+      path: "/registor",
+      component: Registor,
+      name: "registor",
+      meta: {
+        title: "注册",
+        flag: false
+>>>>>>> shaobo
       }
     }
   ]
 })
-router.beforeEach((to,from,next)=>{
-  if(to.meta.flag){
-    if(store.state.personal.token){
+router.beforeEach((to, from, next) => {
+  if (to.meta.flag) {
+    if (store.state.personal.token !== undefined) {
       next();
-    }else{
-      next("/login");
+    } else {
+      next("/loginOne");
     }
-  }else{
+  } else {
     next();
   }
 })

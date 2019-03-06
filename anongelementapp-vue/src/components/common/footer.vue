@@ -7,10 +7,6 @@
           <span>{{item.name}}</span>
         </router-link>
       </li>
-       <li @click="handleToken">
-          <i class="iconfont" >&#xe606;</i>
-          <span>个人中心</span>
-      </li>
     </ul>
   </div>
 </template>
@@ -35,14 +31,20 @@ export default {
           name: "购物车",
           icon: "&#xe66e;",
           path: "/cart"
+        },
+        {
+          name: "个人中心",
+          icon: "&#xe606;",
+          path: "/personal"
         }
 <<<<<<< HEAD
 <<<<<<< HEAD
-      ]
+<<<<<<< HEAD
 =======
-      ],
 >>>>>>> shaobo
+      ]
     };
+<<<<<<< HEAD
 =======
       ]
     }
@@ -56,14 +58,13 @@ export default {
     }
 >>>>>>> shaobo
   }
+=======
+  },
+>>>>>>> shaobo
 };
 </script>
 
-<<<<<<< HEAD
-<style lang="">
-=======
 <style lang="scss">
->>>>>>> shaobo
 .footer {
   width: 100%;
   height: 0.98rem;
@@ -80,13 +81,13 @@ export default {
   justify-content: space-around;
   align-items: center;
 }
-.footer > ul > li > a {
+.footer > ul > li,.footer > ul > li > a {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.footer > ul > li > a > i {
+.footer > ul > li>i,.footer > ul > li > a > i {
   font-size: 40px;
 }
 </style>
