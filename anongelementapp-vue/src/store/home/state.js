@@ -1,5 +1,8 @@
 export default{
     category_nav:[],
     nongren:[],
-    goods:[]
+    goods:[],
+    search:[],
+    two_nong:[],
+    imgs:[]
 }

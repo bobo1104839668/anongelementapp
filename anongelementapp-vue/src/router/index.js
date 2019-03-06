@@ -10,6 +10,8 @@ import Personal from "../components/personal/personal.vue"
 import Login from "../components/common/login.vue"
 import Registor from "../components/common/registor.vue"
 import Search from "../components/home/two_page/search.vue"
+import Circle_nongren from "../components/home/two_page/circle_nongren.vue"
+import Stores from "../components/home/three_page/stores.vue"
 
 const router = new Router({
   routes: [
@@ -28,12 +30,30 @@ const router = new Router({
       }
     },
     {
+      path:"/stores",
+      component:Stores,
+      name:"stores",
+      meta:{
+        flag:true,
+        title:"商家店铺"
+      }
+    },
+    {
       path:"/search",
       component:Search,
       name:"search",
       meta:{
         flag:true,
         title:"二级页面"
+      }
+    },
+    {
+      path:"/circle_nongren",
+      component:Circle_nongren,
+      name:"circle_nongren",
+      meta:{
+        flag:true,
+        title:"二级农人圈"
       }
     },
     {

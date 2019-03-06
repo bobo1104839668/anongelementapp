@@ -5,10 +5,12 @@ import App from './App'
 import router from './router'
 
 import "./common/css/reset.css"
+import "./common/css/my-mint.css"
 import "./common/js/flexble"
 
 import store from "./store"
 import MintUI from 'mint-ui'
+
 Vue.use(MintUI)
 // import axios from "axios"
 

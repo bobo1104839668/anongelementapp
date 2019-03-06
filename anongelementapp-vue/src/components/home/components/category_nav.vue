@@ -1,7 +1,7 @@
 <template>
 	<div>
         <div class="list">
-        	<div class="list-classify" v-for="(item,index) in list">
+        	<div class="list-classify" v-for="(item,index) in list" @click="handleListTo(item.id)">
         		<img :src="item.icon_url?item.icon_url:item.picture"/>
         		<p>{{item.title}}</p>
         	</div>
@@ -13,8 +13,8 @@
 import Vuex from "vuex";
 	
 	export default {
-	  created () {
-        this.handleList();
+	  	created () {
+        	this.handleList();
 	    },
 	    computed:{
 		...Vuex.mapState({
@@ -24,7 +24,14 @@ import Vuex from "vuex";
 	    methods: {
 	        ...Vuex.mapActions({
 	            handleList:"home/handleList"
-	        })
+	        }),
+	        handleListTo(id){
+	        	this.$router.push({
+	        		name:"stores",
+	        		query:{id:id}
+	        	})
+	        }
+
 	    }
 	}
 </script>

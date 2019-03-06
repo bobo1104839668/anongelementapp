@@ -3,7 +3,7 @@
        <div class="swiper-container" ref="swiperWrapper">
           <div class="swiper-wrapper">
             <div class="swiper-slide" v-for="(item,index) in imgs">
-              <img :src="item">
+              <img :src="item.picture"/>
             </div>
           </div>
           
@@ -13,25 +13,37 @@
 </template>
 
 <script>
+import Vuex from "vuex";
 import Swiper from "swiper";
 import "swiper/dist/css/swiper.min.css";
 export default {
-    data(){
-    	return{
-			imgs:
-			[
-	            require("../../../assets/banner.png"),
-	            require("../../../assets/banner.png"),
-	            require("../../../assets/banner.png"),
-            ],
-		}
+  	created () {
+    	this.handleBanner();
     },
-    mounted() {
-    var a = new Swiper(this.$refs.swiperWrapper,{
-      autoplay:true,
-      loop:true
-    })
-  },
+    computed:{
+	...Vuex.mapState({
+            imgs:state=>state.home.imgs
+
+        }),
+    },
+    methods: {
+        ...Vuex.mapActions({
+            handleBanner:"home/handleBanner"
+        }),
+   },
+    updated(){
+    	if(!this.swiper){
+    		this.swiper = new Swiper(this.$refs.swiperWrapper,{
+    			autoplay:{
+    				disableOnInteraction:false,
+    				loop: true,
+    				observer:true,
+    				paginationClickable: true,
+    				pagination: '.swiper-pagination',
+    			}
+    		})
+    	}
+    }
 }
 </script>
 

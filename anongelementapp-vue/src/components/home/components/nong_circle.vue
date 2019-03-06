@@ -3,11 +3,11 @@
        <div class="circle ">
        		<div class="circle-head">
        			<h2>农人圈</h2>
-       			<a href="#">查看更多</a>
+       			<router-link :to="{name:'circle_nongren'}">查看更多</router-link>
        		</div>
        		<div class="swiper-container" ref="swiperWrapper">
 	       		<div class="swiper-wrapper">
-		       		<div class="circle-content swiper-slide" v-for="(item,index) in nongren">
+		       		<div class="circle-content swiper-slide" v-for="(item,index) in nongren"  @click="handleToSellerDetails(item.shopId)">
 		       			<div class="circle-peo">
 		       				<img :src="item.userMicroAvatar"/>
 		       				<div class="right">
@@ -48,15 +48,17 @@
 	    methods: {
 	        ...Vuex.mapActions({
 	            handleCircle:"home/handleCircle"
-	        })
+	        }),
+	        handleToSellerDetails(id){
+	        	this.$router.push({
+	        		name:"stores",
+	        		query:{id:id}
+	        	})
+	        }
 	    },
 	    updated(){
 	    	if(!this.swiper){
-	    		this.swiper = new Swiper(this.$refs.swiperWrapper,{
-//	    			autoplay:{
-//	    				disableOnInteraction:false
-//	    			}
-	    		})
+	    		this.swiper = new Swiper(this.$refs.swiperWrapper)
 	    	}
 	    }
 	}

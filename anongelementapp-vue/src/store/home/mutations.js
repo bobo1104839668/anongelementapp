@@ -7,6 +7,15 @@ export default{
     },
     handleRecommend(state,params){
     	state.goods = params;
-    }
-    
+    },
+    handleSearch(state,params){
+    	state.search = params.hotKeywords;
+    },
+    handleCircle_nong(state,params){
+    	state.two_nong = params.farmerDynamics.farmerDynamics;
+    },
+    handleBanner(state,params){
+    	state.imgs = params;
+    },
+
 }

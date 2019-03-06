@@ -1,25 +1,37 @@
 <template>
-	<div class="search">
-		<mt-header class="search_nav">
-			<router-link to="/" slot="left">
-				<mt-button icon="back"></mt-button>
-			</router-link>
-			<mt-button slot="right" class="search_font">搜索</mt-button>
-		</mt-header>
-		<input type="text" placeholder="小米" class="search_ipt"/>
-		<div class="hot_sou">
-			<h2>热门搜索</h2>
-			<div>蜂蜜</div>
-			<div>蜂蜜</div>
-			<div>蜂蜜</div>
-			<div>蜂蜜</div>
+		<div class="search" >
+			<mt-header class="search_nav">
+				<router-link to="/" slot="left">
+					<mt-button icon="back"></mt-button>
+				</router-link>
+				<mt-button slot="right" class="search_font">搜索</mt-button>
+			</mt-header>
+			<input type="text" placeholder="小米" class="search_ipt"/>
+			<div class="hot_sou" >
+				<h2>热门搜索</h2>
+				<div class="hot_key" v-for="(item,index) in search">
+					<div>{{item}}</div>
+				</div>
+			</div>
 		</div>
-	</div>
 </template>
 
 <script>
-	export default {
-
+	import Vuex from "vuex";
+	export default{
+	  created () {
+	        this.handleSearch();
+	    },
+	    computed:{
+		...Vuex.mapState({
+	            search:state=>state.home.search
+	        }),
+	    },
+	    methods: {
+	        ...Vuex.mapActions({
+	            handleSearch:"home/handleSearch"
+	        })
+	    },
 	}
 </script>
 
@@ -27,6 +39,7 @@
 .search{
 	height:100%;
 	background: #F4F4F0;
+	overflow: auto;
 }
 .search_nav{
 	height:.89rem;
@@ -54,7 +67,7 @@
 	line-height: .8rem;
 	padding-left: .2rem;
 }
-.hot_sou>div{
+.hot_sou>.hot_key{
 	width:1.1rem;
 	height:.7rem;
 	line-height: .7rem;
