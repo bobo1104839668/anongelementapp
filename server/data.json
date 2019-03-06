@@ -1,0 +1,41 @@
+{
+  "users": [
+    {
+      "username": "zhangshaobo",
+      "password": "123",
+      "phone": "18510416568",
+      "id": 1
+    },
+    {
+      "username": "yingying",
+      "password": "123",
+      "phone": "18635933211",
+      "id": 2
+    },
+    {
+      "username": "aaaaa",
+      "password": "123",
+      "phone": "12345678912",
+      "id": 3
+    },
+    {
+      "username": "aaaaaaaa",
+      "password": "111",
+      "phone": "1111111111",
+      "id": 4
+    },
+    {
+      "username": "zhanglan",
+      "password": "123456",
+      "phone": "18610086559",
+      "id": 5
+    },
+    {
+      "username": "",
+      "password": "11111",
+      "phone": "18712345678",
+      "id": 6
+    }
+  ],
+  "address": []
+}

@@ -1,59 +1,69 @@
 <template>
-    <div class="login">
-<<<<<<< HEAD
-        登录
-=======
-       <mt-header title="手机登录" class="header">
-            <router-link to="/home" slot="left" >
-                <mt-button icon="back" ></mt-button>
-            </router-link>
-        </mt-header>
-        <div class="content">
-            <p>请输入手机号直接登录</p>
-            <label class="input-text item">
-                <input type="tel" :value="phone" @input="handleInput" placeholder="手机号" >
-            </label>
-            <button class="btns" @click="handleTo()">下一步</button>
-        </div>
->>>>>>> shaobo
+  <div class="login">
+    <mt-header title="手机登录" class="header">
+      <router-link to="/home" slot="left">
+        <mt-button icon="back"></mt-button>
+      </router-link>
+    </mt-header>
+    <div class="content">
+      <p>请输入手机号直接登录</p>
+      <label class="input-text item">
+        <input type="tel" :value="phone" @input="handleInput({id:2,e:$event})" placeholder="手机号">
+      </label>
+      <button class="btns" @click="handleTo()">下一步</button>
     </div>
+  </div>
 </template>
 
 <script>
-<<<<<<< HEAD
-export default {
-    
-}
-</script>
 
-<style>
-
-=======
 import Vuex from "vuex"
+import Vuex from "vuex";
+import { Toast } from "mint-ui";
+import axios from "axios";
 export default {
-    computed: {
-        ...Vuex.mapState({
-            phone:state=>state.personal.phone,
-            result:state=>state.result
-        })
-    },
-    methods: {
-       ...Vuex.mapActions({
-            handleInput:"handleInput"
-       }),
-       handleTo(){
-           if(result){
-               this.$router.push({
-                   name:"loginTwo"
-               })
-           }else{
-               this.$router.push({
-                   name:"registor"
-               })
-           }
-       }
+  computed: {
+    ...Vuex.mapState({
+      phone: state => state.personal.phone,
+      result: state => state.result
+    })
+  },
+  methods: {
+    ...Vuex.mapActions({
+      handleInput: "personal/handleInput"
+    }),
+    handleTo() {
+      let reg = /^(13|14|15|17|18|19)[0-9]{9}$/;
+      if (reg.test(this.phone)) {
+        axios({
+          method: "get",
+          url: "http://localhost:3000/users?phone=" + this.phone
+        }).then(data => {
+          if (data.data.length) {
+            this.$router.push({
+              name: "loginTwo",
+              query: {
+                phone: this.phone
+              }
+            });
+          } else {
+            this.$router.push({
+              name: "registor",
+              query: {
+                phone: this.phone
+              }
+            });
+          }
+        });
+      } else {
+        let instance = Toast("手机号格式有误");
+        setTimeout(() => {
+          instance.close();
+        }, 2000);
+      }
     }
-}
+  }
+};
 </script>
 
 <style lang="scss">
@@ -66,50 +76,49 @@ export default {
   height: 0.88rem;
   background: #eb4339;
   border-bottom-width: 1px;
-  font-size: .34rem;
+  font-size: 0.34rem;
   color: #fff;
   font-weight: 600;
 }
-.login>.content{
-    width: 100%;
-    height: 100%;
-    p{
-        font-size:.3rem;
-        color: #666;
-        margin: .6rem 0 .4rem .2rem;
-        line-height: .28rem;
+.login > .content {
+  width: 100%;
+  height: 100%;
+  p {
+    font-size: 0.3rem;
+    color: #666;
+    margin: 0.6rem 0 0.4rem 0.2rem;
+    line-height: 0.28rem;
+  }
+  .input-text {
+    margin: 0 0.2rem 0.2rem;
+    border-radius: 0.1rem;
+    background-color: #f4f4f0;
+  }
+  .item {
+    border-bottom: 1px solid #666;
+    border-top: 1px solid #666;
+    display: flex;
+    input {
+      font-size: 0.24rem;
+      width: 100%;
+      text-indent: 0.1rem;
+      border: none;
+      height: 0.8rem;
+      outline: none;
     }
-    .input-text{
-        margin: 0 .2rem .2rem;
-        border-radius: .1rem;
-        background-color: #F4F4F0;
-    }
-    .item{
-        border-bottom: 1px solid #666;
-        border-top: 1px solid #666;
-        display: flex;
-        input{
-            font-size: .24rem;
-            width: 100%;
-            text-indent: .1rem;
-            border: none;
-            height: .8rem;
-            outline: none;
-        }
-    }
-    .btns{
-        width: 94%;
-        min-height: .8rem;
-        line-height: .76rem;
-        border-radius: .1rem;
-        background-color: #D6D6D6;
-        color: #999;
-        font-size: .28rem;
-        padding: 0 .24rem;
-        margin: .5rem .2rem 0 .2rem;
-        border: none;
-        outline: none;
-    }
+  }
+  .btns {
+    width: 94%;
+    min-height: 0.8rem;
+    line-height: 0.76rem;
+    border-radius: 0.1rem;
+    background-color: #d6d6d6;
+    color: #999;
+    font-size: 0.28rem;
+    padding: 0 0.24rem;
+    margin: 0.5rem 0.2rem 0 0.2rem;
+    border: none;
+    outline: none;
+  }
 }
->>>>>>> shaobo
 </style>

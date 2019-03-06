@@ -9,26 +9,25 @@ import classific from "./classific"
 Vue.use(Vuex);
 
 let state = {
-
-<<<<<<< HEAD
-=======
     flag:true
-=======
-<<<<<<< HEAD
+}
 
-=======
-    flag:true
->>>>>>> master
->>>>>>> 42904599a063ca6eeb1631cc6ca9c36914a6f317
->>>>>>> shaobo
+
+let actions = {
+    // handleToken({ commit, state }, params) {
+    //     if (state.personal.token) {
+    //         params.push("/personal")
+    //     } else {
+    //         params.push("/login")
+    //     }
+    //     // commit("handleToken",params);
+    // }
 }
 
 let mutations = {
-
-}
-
-let actions = {
-
+    // handleToken(state, params) {
+    //     params.push("/personal")
+    // }
 }
 
 let getters = {
@@ -40,7 +39,7 @@ const store = new Vuex.Store({
     actions,
     mutations,
     getters,
-    modules:{
+    modules: {
         cart,
         home,
         classific,

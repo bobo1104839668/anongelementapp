@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import Vuex from "vuex"
 export default {
   data() {
     return {
@@ -36,21 +37,13 @@ export default {
           icon: "&#xe606;",
           path: "/personal"
         }
-<<<<<<< HEAD
       ]
-=======
-      ],
->>>>>>> shaobo
     };
-  }
+  },
 };
 </script>
 
-<<<<<<< HEAD
-<style lang="">
-=======
 <style lang="scss">
->>>>>>> shaobo
 .footer {
   width: 100%;
   height: 0.98rem;
@@ -67,13 +60,13 @@ export default {
   justify-content: space-around;
   align-items: center;
 }
-.footer > ul > li > a {
+.footer > ul > li,.footer > ul > li > a {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.footer > ul > li > a > i {
+.footer > ul > li>i,.footer > ul > li > a > i {
   font-size: 40px;
 }
 </style>
