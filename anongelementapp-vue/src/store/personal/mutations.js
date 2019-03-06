@@ -3,6 +3,7 @@ let jwt = require("jsonwebtoken");
 export default{
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     
 <<<<<<< HEAD
 =======
@@ -16,6 +17,8 @@ export default{
 =======
 =======
 >>>>>>> shaobo
+=======
+>>>>>>> d2c5eb4d52fe418169c6be701169da6ed25cd95b
     handleInput(state,params){
         switch(params.id){
             case 1:state.password=params.e.target.value;break;
@@ -31,8 +34,11 @@ export default{
         setCookie("username",state.username)
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> shaobo
 =======
+=======
+>>>>>>> d2c5eb4d52fe418169c6be701169da6ed25cd95b
     handleClickLogin(state,params){
         state.token = getCookie();
         var key = "bk1821";
@@ -90,5 +96,8 @@ export default{
     handles(state){
         state.token = getCookie();
     }
+<<<<<<< HEAD
 >>>>>>> shaobo
+=======
+>>>>>>> d2c5eb4d52fe418169c6be701169da6ed25cd95b
 }

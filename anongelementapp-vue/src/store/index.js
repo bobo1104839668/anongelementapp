@@ -11,6 +11,7 @@ Vue.use(Vuex);
 let state = {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 =======
@@ -29,6 +30,9 @@ let state = {
 =======
     flag:true
 >>>>>>> shaobo
+=======
+    flag: true
+>>>>>>> d2c5eb4d52fe418169c6be701169da6ed25cd95b
 }
 
 

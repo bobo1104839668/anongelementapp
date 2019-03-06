@@ -12,6 +12,7 @@ import Registor from "../components/common/registor.vue"
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import Search from "../components/home/two_page/search.vue"
 =======
 <<<<<<< HEAD
@@ -25,12 +26,17 @@ import Search from "../components/home/two_page/search.vue"
 import Search from "../components/home/two_page/search.vue"
 import Search from "../components/home/two_page/search.vue"
 >>>>>>> shaobo
+=======
+import Search from "../components/home/two_page/search.vue"
+import Search from "../components/home/two_page/search.vue"
+>>>>>>> d2c5eb4d52fe418169c6be701169da6ed25cd95b
 import LoginTwo from "@/components/common/loginTwo.vue"
 import LoginOne from "@/components/common/LoginOne.vue"
 import Forget from "@/components/common/forget.vue"
 import Target from "@/components/personal/components/target"
 import Refund from "@/components/personal/components/refund"
 import Address from "@/components/personal/components/address"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -45,6 +51,10 @@ import AddAddress from "@/components/personal/components/addAddress"
 import SetName from "@/components/personal/components/setName"
 import UpdateAddress from "@/components/personal/components/updateAddress"
 >>>>>>> shaobo
+=======
+import AddAddress from "@/components/personal/components/addAddress"
+import SetName from "@/components/personal/components/setName"
+>>>>>>> d2c5eb4d52fe418169c6be701169da6ed25cd95b
 
 const router = new Router({
   routes: [
@@ -64,6 +74,7 @@ const router = new Router({
       }
     },
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       path:"/search",
@@ -95,6 +106,31 @@ const router = new Router({
       meta:{
         flag:true,
         title:"收货地址管理"
+=======
+      path: "/search",
+      component: Search,
+      name: "search",
+      meta: {
+        flag: true,
+        title: "二级页面"
+      }
+    },
+    {
+      path: "/address",
+      component: Address,
+      name: "address",
+      meta: {
+        flag: true,
+        title: "收货地址管理"
+      }
+    },
+    {
+      path: "/setName",
+      component: SetName,
+      name: "setName",
+      meta: {
+        flag: false
+>>>>>>> d2c5eb4d52fe418169c6be701169da6ed25cd95b
       }
     },
     {
@@ -109,6 +145,7 @@ const router = new Router({
     {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> master
 >>>>>>> 42904599a063ca6eeb1631cc6ca9c36914a6f317
@@ -121,6 +158,14 @@ const router = new Router({
       meta:{
         flag:true,
         title:"分类"
+=======
+      path: "/classific",
+      component: Classific,
+      name: "classific",
+      meta: {
+        flag: true,
+        title: "分类"
+>>>>>>> d2c5eb4d52fe418169c6be701169da6ed25cd95b
       }
     },
     {
@@ -133,6 +178,7 @@ const router = new Router({
       }
     },
     {
+<<<<<<< HEAD
       path:"/personal",
       component:Personal,
       name:"personal",
@@ -284,6 +330,25 @@ const router = new Router({
       }
     },
     {
+=======
+      path: "/personal",
+      component: Personal,
+      name: "personal",
+      meta: {
+        flag: true,
+        title: "个人中心"
+      }
+    },
+    {
+      path: "/login",
+      component: Login,
+      name: "login",
+      meta: {
+        flag: true,
+        title: "登录"
+      }
+    }, {
+>>>>>>> d2c5eb4d52fe418169c6be701169da6ed25cd95b
       path: "/classific",
       component: Classific,
       name: "classific",
@@ -429,7 +494,10 @@ const router = new Router({
       meta: {
         title: "注册",
         flag: false
+<<<<<<< HEAD
 >>>>>>> shaobo
+=======
+>>>>>>> d2c5eb4d52fe418169c6be701169da6ed25cd95b
       }
     }
   ]

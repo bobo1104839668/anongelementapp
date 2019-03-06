@@ -1,19 +1,4 @@
 <template>
-<<<<<<< HEAD
-    <div class="personal">
-        个人中心
-    </div>
-</template>
-
-<script>
-export default {
-    
-}
-</script>
-
-<style lang="">
-    
-=======
   <div class="personal">
     <mt-header title="个人中心" class="header">
         <mt-button slot="right" @click="handleSets()">
@@ -257,5 +242,4 @@ export default {
       margin-right: .2rem;
   }
 }
->>>>>>> shaobo
 </style>

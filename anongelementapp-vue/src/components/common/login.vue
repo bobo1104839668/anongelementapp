@@ -1,10 +1,14 @@
 <template>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <div class="login">
 <<<<<<< HEAD
         登录
 =======
+=======
+    <div class="login">
+>>>>>>> d2c5eb4d52fe418169c6be701169da6ed25cd95b
        <mt-header title="手机登录" class="header">
             <router-link to="/home" slot="left" >
                 <mt-button icon="back" ></mt-button>
@@ -17,10 +21,13 @@
             </label>
             <button class="btns" @click="handleTo()">下一步</button>
         </div>
+<<<<<<< HEAD
 >>>>>>> shaobo
 =======
 =======
 >>>>>>> shaobo
+=======
+>>>>>>> d2c5eb4d52fe418169c6be701169da6ed25cd95b
   <div class="login">
     <mt-header title="手机登录" class="header">
       <router-link to="/home" slot="left">
@@ -34,14 +41,18 @@
       </label>
       <button class="btns" @click="handleTo()">下一步</button>
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> shaobo
 =======
 >>>>>>> shaobo
+=======
+>>>>>>> d2c5eb4d52fe418169c6be701169da6ed25cd95b
     </div>
   </div>
 </template>
 
 <script>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -53,6 +64,9 @@ export default {
 <style>
 =======
 >>>>>>> shaobo
+=======
+import Vuex from "vuex"
+>>>>>>> d2c5eb4d52fe418169c6be701169da6ed25cd95b
 
 import Vuex from "vuex"
 <<<<<<< HEAD
@@ -63,9 +77,14 @@ import Vuex from "vuex";
 import { Toast } from "mint-ui";
 import axios from "axios";
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> shaobo
 =======
 >>>>>>> shaobo
+=======
+import Vuex from "vuex";
+import axios from "axios";
+>>>>>>> d2c5eb4d52fe418169c6be701169da6ed25cd95b
 export default {
   computed: {
     ...Vuex.mapState({

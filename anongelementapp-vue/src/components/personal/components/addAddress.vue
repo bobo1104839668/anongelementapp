@@ -37,7 +37,11 @@
         <textarea class="area" :value="address"  @input="handleInputs({id:3,e:$event})" placeholder="详细地址"></textarea>
       </label>
       <p>
+<<<<<<< HEAD
         <input type="radio" :value="status" :checked="status==1?'checked':''" @click="handleChecked($event)">设为默认地址 
+=======
+        <input type="radio" :value="status" :checked="status==1?'checked':''" @click="handleChecked()">设为默认地址 
+>>>>>>> d2c5eb4d52fe418169c6be701169da6ed25cd95b
       </p>
       <button class="btns" @click="handleTos()">确认添加</button>
     </div>
@@ -72,8 +76,12 @@ export default {
           handleClickCitie:"personal/handleClickCitie",
           handleTo:"personal/handleTo",
           handleToId:"personal/handleToId",
+<<<<<<< HEAD
           handleChecked:"personal/handleChecked",
           handleClickCounties:"personal/handleClickCounties"
+=======
+          handleChecked:"personal/handleChecked"
+>>>>>>> d2c5eb4d52fe418169c6be701169da6ed25cd95b
       }),
       ...Vuex.mapMutations({
          handleInputs:"personal/handleInputs"

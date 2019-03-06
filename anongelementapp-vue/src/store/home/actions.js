@@ -21,5 +21,4 @@ export default {
        let data = await SearchData();
        commit("handleSearch",data)
     },
-
 }

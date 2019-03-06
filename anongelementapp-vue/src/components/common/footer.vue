@@ -40,12 +40,15 @@ export default {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> shaobo
       ]
     };
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> d2c5eb4d52fe418169c6be701169da6ed25cd95b
       ]
     }
   },
@@ -56,7 +59,6 @@ export default {
     handleToken(){
       this.handleTokens(this.$router);
     }
->>>>>>> shaobo
   }
 =======
   },

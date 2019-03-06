@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import axios from "axios"
 <<<<<<< HEAD
 export default{
@@ -17,6 +18,8 @@ export default{
 =======
 
 >>>>>>> shaobo
+=======
+>>>>>>> d2c5eb4d52fe418169c6be701169da6ed25cd95b
 // import {Provices} from "../../apis/http"
 import axios from "axios"
 import {Provices,Cities} from "../../apis/personal"
@@ -244,6 +247,7 @@ export default {
     }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> master
 >>>>>>> 42904599a063ca6eeb1631cc6ca9c36914a6f317
@@ -254,4 +258,6 @@ export default {
 =======
 >>>>>>> 483a303f496fcfc1916ce929fb9ce03f5ecbf078
 >>>>>>> shaobo
+=======
+>>>>>>> d2c5eb4d52fe418169c6be701169da6ed25cd95b
 }
